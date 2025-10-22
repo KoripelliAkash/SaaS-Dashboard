@@ -1,0 +1,41 @@
+/* Global styles and font imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Inter', sans-serif;
+
+  /* Light Theme Variables */
+  --background-color: #F7F8FA;
+  --sidebar-bg: #FFFFFF;
+  --card-bg: #FFFFFF;
+  --text-primary: #1F2937;
+  --text-secondary: #6B7280;
+  --border-color: #E5E7EB;
+  --accent-color: #3B82F6;
+  --accent-hover: #2563EB;
+  --green-positive: #10B981;
+  --red-negative: #EF4444;
+}
+
+[data-theme='dark'] {
+  /* Dark Theme Variables */
+  --background-color: #111827;
+  --sidebar-bg: #1F2937;
+  --card-bg: #1F2937;
+  --text-primary: #F9FAFB;
+  --text-secondary: #9CA3AF;
+  --border-color: #374151;
+  --accent-color: #60A5FA;
+  --accent-hover: #3B82F6;
+  --green-positive: #34D399;
+  --red-negative: #F87171;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Add other global styles here */

@@ -1,0 +1,47 @@
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.title {
+  margin: 0 0 8px 0;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.valueContainer {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.value {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.percentage {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.positive {
+  color: var(--green-positive);
+}
+
+.negative {
+  color: var(--red-negative);
+}

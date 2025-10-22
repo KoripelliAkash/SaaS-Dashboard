@@ -1,0 +1,54 @@
+.dashboardContainer {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 24px;
+}
+
+/* Spanning grid items */
+.projections {
+  grid-column: span 2;
+}
+
+.revenue {
+  grid-column: span 2;
+}
+
+.topProducts {
+  grid-column: span 3;
+}
+
+.sales {
+  grid-column: span 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .topProducts {
+    grid-column: span 2;
+  }
+  .sales {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+  .projections, .revenue, .topProducts, .sales {
+    grid-column: span 1;
+  }
+}

@@ -1,0 +1,26 @@
+.app {
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  display: flex;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 280px;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* Dark mode transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

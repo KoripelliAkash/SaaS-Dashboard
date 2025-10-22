@@ -1,0 +1,88 @@
+.tableContainer {
+  width: 100%;
+  overflow-x: auto; /* For responsiveness on small screens */
+}
+
+.orderTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.orderTable th, .orderTable td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.orderTable th {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.orderTable td {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.orderId {
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.statusPill {
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.statusPill::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.complete {
+  color: #059669;
+  background-color: #D1FAE5;
+}
+.complete::before { background-color: #10B981; }
+
+.inProgress {
+  color: #2563EB;
+  background-color: #DBEAFE;
+}
+.inProgress::before { background-color: #3B82F6; }
+
+.pending {
+  color: #D97706;
+  background-color: #FEF3C7;
+}
+.pending::before { background-color: #F59E0B; }
+
+.rejected {
+  color: #DC2626;
+  background-color: #FEE2E2;
+}
+.rejected::before { background-color: #EF4444; }
+
+/* Dark mode adjustments for pills */
+[data-theme='dark'] .complete {
+  color: #6EE7B7; background-color: rgba(16, 185, 129, 0.2);
+}
+[data-theme='dark'] .inProgress {
+  color: #93C5FD; background-color: rgba(59, 130, 246, 0.2);
+}
+[data-theme='dark'] .pending {
+  color: #FCD34D; background-color: rgba(245, 158, 11, 0.2);
+}
+[data-theme='dark'] .rejected {
+  color: #FCA5A5; background-color: rgba(239, 68, 68, 0.2);
+}
