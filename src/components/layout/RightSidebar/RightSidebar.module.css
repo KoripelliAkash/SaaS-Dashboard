@@ -1,6 +1,6 @@
-/* --- Desktop First Styles (Default) --- */
+
 .rightSidebar {
-  width: 300px;
+  width: 260px;
   background-color: var(--sidebar-bg);
   border-left: 1px solid var(--border-color);
   padding: 24px;
@@ -8,7 +8,7 @@
   flex-direction: column;
   flex-shrink: 0;
   transition: transform 0.3s ease-in-out;
-  overflow: hidden; /* Hide content overflow on main container */
+  overflow: hidden; 
 }
 
 .header {
@@ -44,9 +44,7 @@
   display: none;
 }
 
-.section {
-  /* No styles needed */
-}
+
 
 .sectionTitle {
   font-size: 16px;
@@ -56,7 +54,6 @@
   margin-bottom: 20px;
 }
 
-/* Notification, Activity, and Contact Styles */
 .notificationList, .activityList, .contactList {
   list-style: none;
   padding: 0;
@@ -122,6 +119,7 @@
 @media (max-width: 1024px) {
   .rightSidebar {
     position: fixed;
+    width: 260px;
     right: 0;
     top: 0;
     bottom: 0;
@@ -143,7 +141,7 @@
 /* --- Mobile Only Adjustments --- */
 @media (max-width: 767px) {
   .rightSidebar {
-    width: 280px;
+    width: 260px;
     padding: 20px;
   }
 }
@@ -152,7 +150,7 @@
 /* --- Small Mobile Adjustments --- */
 @media (max-width: 480px) {
   .rightSidebar {
-    width: 100%; /* Take full width on small phones */
+    width: 260px; /* Take full width on small phones */
     border-left: none;
   }
 }

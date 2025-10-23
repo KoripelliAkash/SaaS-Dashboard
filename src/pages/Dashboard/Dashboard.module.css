@@ -6,14 +6,8 @@
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .topGrid {
@@ -36,7 +30,7 @@
 .projectionBox {
   border-radius: 1rem;
   width: 100%;
-  padding: 1.5rem;
+  margin-left: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,7 +62,7 @@
 
 .topRow {
   display: grid;
-  grid-template-columns: 1fr 1.5fr 1fr; 
+  grid-template-columns: 1fr 2fr 1fr; 
   gap: 24px;
   align-items: start;
 }
@@ -86,6 +80,12 @@
   align-items: start;
 }
 
+@media (max-width: 1200px) {
+  .topRow, .bottomRow {
+    grid-template-columns: 1fr; 
+  }
+}
+
 @media (max-width: 992px) {
   .row {
     grid-template-columns: 1fr; 
@@ -99,7 +99,7 @@
     grid-template-columns: 1fr; 
   }
   .projectionBox {
-    min-height: 300px;
+    /* min-height: 300px; */
   }
   .mainGrid {
     grid-template-columns: 1fr;
@@ -118,7 +118,7 @@
   }
   .grd {
     gap: 1rem;
-    padding: 1rem;
+    /* padding: 1rem; */
   }
 }
 
