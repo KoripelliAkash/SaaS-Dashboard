@@ -4,12 +4,12 @@ import { FiAlertCircle, FiUserPlus, FiMessageSquare, FiUploadCloud, FiEdit3, FiT
 
 const RightSidebar = ({ isOpen }) => {
   const contacts = [
-    { name: 'Natali Craig', avatar: '/src/assets/avatar-natali.png' },
-    { name: 'Drew Cano', avatar: '/src/assets/avatar-drew.png' },
-    { name: 'Orlando Diggs', avatar: '/src/assets/avatar-orlando.png' },
-    { name: 'Andi Lane', avatar: '/src/assets/avatar-andi.png' },
-    { name: 'Kate Morrison', avatar: '/src/assets/avatar-kate.png' },
-    { name: 'Koray Okumus', avatar: '/src/assets/avatar-koray.png' },
+    { name: 'Natali Craig', avatar: '/src/assets/avatar-1.jpg' },
+    { name: 'Drew Cano', avatar: '/src/assets/avatar-3.jpg' },
+    { name: 'Orlando Diggs', avatar: '/src/assets/avatar-4.jpg' },
+    { name: 'Andi Lane', avatar: '/src/assets/avatar-5.jpg' },
+    { name: 'Kate Morrison', avatar: '/src/assets/avatar-2.jpg' },
+    { name: 'Koray Okumus', avatar: '/src/assets/avatar-6.jpg' },
   ];
   const sidebarClasses = `${styles.rightSidebar} ${isOpen ? '' : styles.closed}`;
 

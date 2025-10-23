@@ -6,6 +6,8 @@ import {
   FiEdit3, FiShare2, FiStar, FiClock
 } from 'react-icons/fi';
 
+import logoImage from '../../assets/logo.jpg';
+
 const pageMap = {
   'eCommerce': { name: 'eCommerce', icon: <FiShoppingCart /> },
   'Projects': { name: 'Projects', icon: <FiLayers /> },
@@ -56,6 +58,7 @@ const Sidebar = ({ isOpen, activePage, setActivePage, favorites }) => {
   return (
     <aside className={sidebarClasses}>
       <div className={styles.logo}>
+        <img src={logoImage} alt="Logo" className={styles.logoImage} />
         <h3>Byewind</h3>
       </div>
       
@@ -93,8 +96,7 @@ const Sidebar = ({ isOpen, activePage, setActivePage, favorites }) => {
             )}
           </ul>
         </div>
-
-        {/* This renders your other, static sections */}
+        
         {sidebarSections.map((section) => (
           <div key={section.title} className={styles.navSection}>
             <p className={styles.navTitle}>{section.title}</p>

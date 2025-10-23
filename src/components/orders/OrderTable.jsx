@@ -55,7 +55,6 @@ const OrderTable = ({ orders, onSort, sortConfig }) => {
     return (
         <div className={styles.tableContainer}>
             <table className={styles.orderTable}>
-                {/* The table head uses the new icon */}
                 <thead>
                     <tr>
                         <th>

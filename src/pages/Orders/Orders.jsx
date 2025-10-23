@@ -6,21 +6,21 @@ import { FiPlus, FiFilter, FiSearch } from 'react-icons/fi';
 import { FaSort } from 'react-icons/fa';
 
 const allOrders = [
-    { id: '#CM9801', user: 'Natali Craig', avatar: '/src/assets/avatar-1.png', project: 'Landing Page', address: 'Meadow Lane Oakland', date: new Date(), status: 'In Progress' },
-    { id: '#CM9802', user: 'Kate Morrison', avatar: '/src/assets/avatar-2.png', project: 'CRM Admin pages', address: 'Lorry San Francisco', date: new Date(Date.now() - 3600000), status: 'Complete' }, 
-    { id: '#CM9803', user: 'Drew Cano', avatar: '/src/assets/avatar-3.png', project: 'Client Project', address: 'Bogwell Avenue Ocala', date: new Date(Date.now() - 86400000), status: 'Pending' }, 
-    { id: '#CM9804', user: 'Orlando Diggs', avatar: '/src/assets/avatar-4.png', project: 'Admin Dashboard', address: 'Washburn Baton Rouge', date: new Date('2025-09-15T11:00:00Z'), status: 'Approved' },
-    { id: '#CM9805', user: 'Andi Lane', avatar: '/src/assets/avatar-5.png', project: 'App Landing Page', address: 'Nest Lane Olivette', date: new Date('2025-09-10T09:00:00Z'), status: 'Rejected' },
-    { id: '#CM9806', user: 'Natali Craig', avatar: '/src/assets/avatar-1.png', project: 'Landing Page', address: 'Meadow Lane Oakland', date: new Date(), status: 'In Progress' },
-    { id: '#CM9807', user: 'Kate Morrison', avatar: '/src/assets/avatar-2.png', project: 'CRM Admin pages', address: 'Lorry San Francisco', date: new Date(Date.now() - 3600000), status: 'Complete' }, 
-    { id: '#CM9808', user: 'Drew Cano', avatar: '/src/assets/avatar-3.png', project: 'Client Project', address: 'Bogwell Avenue Ocala', date: new Date(Date.now() - 86400000), status: 'Pending' }, 
-    { id: '#CM9809', user: 'Orlando Diggs', avatar: '/src/assets/avatar-4.png', project: 'Admin Dashboard', address: 'Washburn Baton Rouge', date: new Date('2025-09-15T11:00:00Z'), status: 'Approved' },
-    { id: '#CM9810', user: 'Andi Lane', avatar: '/src/assets/avatar-5.png', project: 'App Landing Page', address: 'Nest Lane Olivette', date: new Date('2025-09-10T09:00:00Z'), status: 'Rejected' },
-    { id: '#CM9811', user: 'Natali Craig', avatar: '/src/assets/avatar-1.png', project: 'Landing Page', address: 'Meadow Lane Oakland', date: new Date(), status: 'In Progress' },
-    { id: '#CM9812', user: 'Kate Morrison', avatar: '/src/assets/avatar-2.png', project: 'CRM Admin pages', address: 'Lorry San Francisco', date: new Date(Date.now() - 3600000), status: 'Complete' }, 
-    { id: '#CM9813', user: 'Drew Cano', avatar: '/src/assets/avatar-3.png', project: 'Client Project', address: 'Bogwell Avenue Ocala', date: new Date(Date.now() - 86400000), status: 'Pending' }, 
-    { id: '#CM9814', user: 'Orlando Diggs', avatar: '/src/assets/avatar-4.png', project: 'Admin Dashboard', address: 'Washburn Baton Rouge', date: new Date('2025-09-15T11:00:00Z'), status: 'Approved' },
-    { id: '#CM9815', user: 'Andi Lane', avatar: '/src/assets/avatar-5.png', project: 'App Landing Page', address: 'Nest Lane Olivette', date: new Date('2025-09-10T09:00:00Z'), status: 'Rejected' },
+    { id: '#CM9801', user: 'Natali Craig', avatar: '/src/assets/avatar-1.jpg', project: 'Landing Page', address: 'Meadow Lane Oakland', date: new Date(), status: 'In Progress' },
+    { id: '#CM9802', user: 'Kate Morrison', avatar: '/src/assets/avatar-2.jpg', project: 'CRM Admin pages', address: 'Lorry San Francisco', date: new Date(Date.now() - 3600000), status: 'Complete' }, 
+    { id: '#CM9803', user: 'Drew Cano', avatar: '/src/assets/avatar-3.jpg', project: 'Client Project', address: 'Bogwell Avenue Ocala', date: new Date(Date.now() - 86400000), status: 'Pending' }, 
+    { id: '#CM9804', user: 'Orlando Diggs', avatar: '/src/assets/avatar-4.jpg', project: 'Admin Dashboard', address: 'Washburn Baton Rouge', date: new Date('2025-09-15T11:00:00Z'), status: 'Approved' },
+    { id: '#CM9805', user: 'Andi Lane', avatar: '/src/assets/avatar-5.jpg', project: 'App Landing Page', address: 'Nest Lane Olivette', date: new Date('2025-09-10T09:00:00Z'), status: 'Rejected' },
+    { id: '#CM9806', user: 'Natali Craig', avatar: '/src/assets/avatar-1.jpg', project: 'Landing Page', address: 'Meadow Lane Oakland', date: new Date(), status: 'In Progress' },
+    { id: '#CM9807', user: 'Kate Morrison', avatar: '/src/assets/avatar-2.jpg', project: 'CRM Admin pages', address: 'Lorry San Francisco', date: new Date(Date.now() - 3600000), status: 'Complete' }, 
+    { id: '#CM9808', user: 'Drew Cano', avatar: '/src/assets/avatar-3.jpg', project: 'Client Project', address: 'Bogwell Avenue Ocala', date: new Date(Date.now() - 86400000), status: 'Pending' }, 
+    { id: '#CM9809', user: 'Orlando Diggs', avatar: '/src/assets/avatar-4.jpg', project: 'Admin Dashboard', address: 'Washburn Baton Rouge', date: new Date('2025-09-15T11:00:00Z'), status: 'Approved' },
+    { id: '#CM9810', user: 'Andi Lane', avatar: '/src/assets/avatar-5.jpg', project: 'App Landing Page', address: 'Nest Lane Olivette', date: new Date('2025-09-10T09:00:00Z'), status: 'Rejected' },
+    { id: '#CM9811', user: 'Natali Craig', avatar: '/src/assets/avatar-1.jpg', project: 'Landing Page', address: 'Meadow Lane Oakland', date: new Date(), status: 'In Progress' },
+    { id: '#CM9812', user: 'Kate Morrison', avatar: '/src/assets/avatar-2.jpg', project: 'CRM Admin pages', address: 'Lorry San Francisco', date: new Date(Date.now() - 3600000), status: 'Complete' }, 
+    { id: '#CM9813', user: 'Drew Cano', avatar: '/src/assets/avatar-3.jpg', project: 'Client Project', address: 'Bogwell Avenue Ocala', date: new Date(Date.now() - 86400000), status: 'Pending' }, 
+    { id: '#CM9814', user: 'Orlando Diggs', avatar: '/src/assets/avatar-4.jpg', project: 'Admin Dashboard', address: 'Washburn Baton Rouge', date: new Date('2025-09-15T11:00:00Z'), status: 'Approved' },
+    { id: '#CM9815', user: 'Andi Lane', avatar: '/src/assets/avatar-5.jpg', project: 'App Landing Page', address: 'Nest Lane Olivette', date: new Date('2025-09-10T09:00:00Z'), status: 'Rejected' },
 ];
 
 const ordersPerPage = 5;
