@@ -5,6 +5,9 @@
   box-shadow: var(--card-box-shadow);
   padding: 24px;
   transition: all 0.3s ease;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -16,6 +19,10 @@
   margin: 0 0 8px 0;
   color: var(--text-secondary);
   font-weight: 500;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .value {
@@ -23,12 +30,14 @@
   font-size: 32px;
   font-weight: 700;
   color: var(--text-primary);
+  line-height: 1.2;
 }
 
 .footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: auto;
 }
 
 .percentage {
@@ -39,6 +48,7 @@
   font-size: 14px;
   padding: 4px 8px;
   border-radius: 12px;
+  white-space: nowrap;
 }
 
 .positive {
@@ -54,4 +64,67 @@
 .chartIcon {
   color: var(--text-secondary);
   opacity: 0.5;
+  font-size: 20px;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .card {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .value {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .percentage {
+    font-size: 13px;
+    padding: 3px 6px;
+  }
+
+  .chartIcon {
+    font-size: 18px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .card {
+    padding: 16px;
+  }
+
+  .title {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .value {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .percentage {
+    font-size: 12px;
+    padding: 2px 6px;
+  }
+
+  .chartIcon {
+    font-size: 16px;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .card {
+    padding: 12px;
+  }
+
+  .value {
+    font-size: 22px;
+  }
 }

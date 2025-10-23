@@ -1,7 +1,24 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+html {
+  font-size: 16px;
+}
+
+/* Layout styles */
 .app {
   min-height: 100vh;
   transition: all 0.3s ease;
   display: flex;
+  position: relative;
+  overflow-x: hidden;
 }
 
 .main-content {
@@ -11,16 +28,84 @@
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  padding: 24px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Tablet styles */
+@media (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+
   .main-content {
-    margin-left: 0;
+    margin-left: 220px;
+    padding: 20px;
   }
 }
 
-/* Dark mode transitions */
-* {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+/* Mobile styles */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .app {
+    flex-direction: column;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+
+  .main-content {
+    padding: 12px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .app {
+    display: block;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 0;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  * {
+    cursor: default !important;
+  }
+
+  input, button, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* High contrast and reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  :root {
+    --border-color: #000 !important;
+  }
 }

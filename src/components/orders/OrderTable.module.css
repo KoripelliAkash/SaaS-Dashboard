@@ -1,19 +1,50 @@
-.tableContainer { 
-  width: 100%; 
-  overflow-x: auto; 
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--card-border-radius);
+  background-color: var(--card-bg);
+  box-shadow: var(--card-box-shadow);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
 }
-.orderTable { width: 100%; border-collapse: collapse; }
+
+.tableContainer::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.tableContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tableContainer::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 3px;
+}
+
+.orderTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
 .orderTable th, .orderTable td {
-    padding: 16px;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
-    white-space: nowrap;
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+  min-width: 100px;
 }
 .orderTable th {
-    color: var(--text-secondary);
-    font-weight: 500;
-    font-size: 12px;
-    text-transform: uppercase;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  background-color: var(--card-bg);
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 .orderTable td {
     color: var(--text-primary);
@@ -26,53 +57,179 @@
     background-color: rgba(139, 92, 246, 0.15);
 }
 
-.userCell { display: flex; align-items: center; gap: 12px; }
-.avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+.userCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 200px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.dateCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 120px;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .orderTable th, .orderTable td {
+    padding: 12px;
+  }
+
+  .avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  .headerButton {
+    font-size: 11px;
+  }
+
+  .statusPill {
+    font-size: 11px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .orderTable th, .orderTable td {
+    padding: 10px;
+  }
+
+  .avatar {
+    width: 24px;
+    height: 24px;
+  }
+
+  .userCell {
+    min-width: 160px;
+    gap: 8px;
+  }
+
+  .dateCell {
+    min-width: 100px;
+    gap: 6px;
+  }
+
+  .headerButton {
+    font-size: 10px;
+    gap: 4px;
+  }
+
+  .statusPill {
+    font-size: 10px;
+    gap: 6px;
+  }
+
+  .statusPill::before {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .orderTable th, .orderTable td {
+    padding: 8px;
+  }
+
+  .userCell {
+    min-width: 140px;
+  }
+}
 
 .orderTable input[type="checkbox"] {
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    border: 2px solid var(--border-color);
-    border-radius: 4px;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.2s ease;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
 }
-.orderTable input[type="checkbox"]:hover { border-color: var(--accent-color); }
+
+.orderTable input[type="checkbox"]:hover {
+  border-color: var(--accent-color);
+}
+
 .orderTable input[type="checkbox"]:checked {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
 }
+
 .orderTable input[type="checkbox"]:checked::after {
-    content: '✔';
-    font-size: 14px;
-    color: var(--background-color);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  content: '✔';
+  font-size: 14px;
+  color: var(--background-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 1024px) {
+  .orderTable input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+
+  .orderTable input[type="checkbox"]:checked::after {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .orderTable input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+  }
+
+  .orderTable input[type="checkbox"]:checked::after {
+    font-size: 10px;
+  }
 }
 
 .headerButton {
-    background: none; border: none; padding: 0; margin: 0; cursor: pointer;
-    font-family: inherit; font-size: 12px; font-weight: 500;
-    color: var(--text-secondary); text-transform: uppercase;
-    display: flex; align-items: center; gap: 6px; 
-    transition: color 0.2s ease;
+  background: none;
+  border: none;
+  padding: 8px 0;
+  margin: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
 }
 .headerButton:hover { color: var(--text-primary); }
 .sortIconInactive { opacity: 0.4; }
 .headerButton:hover .sortIconInactive { opacity: 1; }
 
 .statusPill {
-    font-size: 12px;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background-color: transparent !important;
-    padding: 0 !important;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent !important;
+  padding: 0 !important;
+  min-width: 100px;
 }
 .statusPill::before { content: ''; width: 8px; height: 8px; border-radius: 50%; }
 
