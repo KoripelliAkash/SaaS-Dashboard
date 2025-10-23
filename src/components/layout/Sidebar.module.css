@@ -6,19 +6,58 @@
   display: flex;
   flex-direction: column;
   transition: background-color 0.3s ease, border-color 0.3s ease;
+  overflow-y: auto; /* Allow sidebar to scroll if content is long */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+}
+.sidebar::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
 }
 
+
 .logo {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   color: var(--text-primary);
 }
 
+/* --- NEW STYLES for top links --- */
+.topLinks {
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 16px;
+}
+
+.topLinkItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.topLinkItem:hover {
+  background-color: var(--background-color);
+  color: var(--text-primary);
+}
+/* --- END NEW STYLES --- */
+
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Space between sections */
+}
+
 .navTitle {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   color: var(--text-secondary);
   text-transform: uppercase;
-  margin: 16px 0;
+  margin: 16px 0 8px 16px; /* Adjusted margin */
 }
 
 .nav ul {
@@ -31,11 +70,12 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 16px;
+  padding: 10px 16px; /* Adjusted padding */
   border-radius: 8px;
   cursor: pointer;
   color: var(--text-secondary);
   font-weight: 500;
+  font-size: 14px; /* Slightly smaller font */
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -51,4 +91,9 @@
 
 .navItem.active:hover {
   background-color: var(--accent-hover);
+}
+
+/* --- NEW STYLE for sub-items --- */
+.subItem {
+  padding-left: 44px; /* Indent sub-items */
 }

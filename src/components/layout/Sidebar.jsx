@@ -1,41 +1,93 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from '../../contexts/ThemeContext';
+import React from 'react';
 import styles from './Sidebar.module.css';
-import { FiHome, FiBarChart2, FiLayers, FiUser, FiBriefcase, FiFileText, FiMessageSquare, FiSettings } from 'react-icons/fi';
+import {
+  FiHome, FiLayers, FiGrid, FiShoppingCart, FiBookOpen,
+  FiFileText, FiUsers, FiTarget, FiFile, FiUser, FiBriefcase,
+  FiEdit3, FiShare2, FiStar, FiClock
+} from 'react-icons/fi';
 
-// In a real app, you'd fetch this from an API or config
-const navItems = [
-  { name: 'Default', icon: <FiHome />, page: 'Default' },
-  { name: 'eCommerce', icon: <FiBarChart2 />, page: 'eCommerce' },
-  { name: 'Projects', icon: <FiLayers />, page: 'Projects' },
-  // ... add other items
+// New, detailed data structure for the sidebar
+const sidebarSections = [
+  {
+    title: 'Dashboards',
+    items: [
+      { name: 'Default', icon: <FiGrid />, page: 'Default' },
+      { name: 'eCommerce', icon: <FiShoppingCart />, page: 'eCommerce' },
+      { name: 'Projects', icon: <FiLayers />, page: 'Projects' },
+      { name: 'Online Courses', icon: <FiBookOpen />, page: 'Online Courses' },
+    ],
+  },
+  {
+    title: 'Pages',
+    items: [
+      { name: 'User Profile', icon: <FiUser />, page: 'UserProfile' },
+      { name: 'Overview', icon: <FiHome />, page: 'PageOverview', isSubItem: true },
+      { name: 'Projects', icon: <FiLayers />, page: 'PageProjects', isSubItem: true },
+      { name: 'Campaigns', icon: <FiTarget />, page: 'Campaigns', isSubItem: true },
+      { name: 'Documents', icon: <FiFile />, page: 'Documents', isSubItem: true },
+      { name: 'Followers', icon: <FiUsers />, page: 'Followers', isSubItem: true },
+    ],
+  },
+  {
+    title: 'Account',
+    items: [{ name: 'Account', icon: <FiUser />, page: 'Account' }],
+  },
+  {
+    title: 'Corporate',
+    items: [{ name: 'Corporate', icon: <FiBriefcase />, page: 'Corporate' }],
+  },
+  {
+    title: 'Blog',
+    items: [{ name: 'Blog', icon: <FiEdit3 />, page: 'Blog' }],
+  },
+  {
+    title: 'Social',
+    items: [{ name: 'Social', icon: <FiShare2 />, page: 'Social' }],
+  },
 ];
 
 const Sidebar = ({ activePage, setActivePage }) => {
-  const { theme } = useContext(ThemeContext);
-
   return (
     <aside className={styles.sidebar}>
       <div className={styles.logo}>
-        {/* You can use an SVG or text for the logo */}
         <h3>Byewind</h3>
       </div>
+      
+      {/* Top Links */}
+      <div className={styles.topLinks}>
+        <div className={styles.topLinkItem}>
+          <FiStar />
+          <span>Favorites</span>
+        </div>
+        <div className={styles.topLinkItem}>
+          <FiClock />
+          <span>Recently</span>
+        </div>
+      </div>
+
       <nav className={styles.nav}>
-        <p className={styles.navTitle}>Dashboards</p>
-        <ul>
-          {navItems.map(item => (
-            <li
-              key={item.name}
-              className={`${styles.navItem} ${activePage === item.page ? styles.active : ''}`}
-              onClick={() => setActivePage(item.page)}
-            >
-              {item.icon}
-              <span>{item.name}</span>
-            </li>
-          ))}
-        </ul>
+        {sidebarSections.map((section) => (
+          <div key={section.title} className={styles.navSection}>
+            <p className={styles.navTitle}>{section.title}</p>
+            <ul>
+              {section.items.map((item) => (
+                <li
+                  key={item.name}
+                  className={`
+                    ${styles.navItem} 
+                    ${item.isSubItem ? styles.subItem : ''}
+                    ${activePage === item.page ? styles.active : ''}
+                  `}
+                  onClick={() => setActivePage(item.page)}
+                >
+                  {item.icon}
+                  <span>{item.name}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </nav>
-      {/* Add other nav sections like "Pages", "Account", etc. */}
     </aside>
   );
 };
