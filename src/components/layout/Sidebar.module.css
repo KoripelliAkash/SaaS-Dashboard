@@ -6,9 +6,12 @@
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  white-space: nowrap; 
+  white-space: nowrap;
   transition: width 0.3s ease-in-out, padding 0.3s ease-in-out;
-  overflow: hidden;
+  overflow: hidden; 
+  overflow-y: auto;
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
 }
 
 .sidebar.closed {
@@ -18,9 +21,8 @@
 }
 
 .sidebar::-webkit-scrollbar {
-  display: none;
+  display: none; 
 }
-
 
 .logo {
   margin-bottom: 24px;
