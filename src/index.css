@@ -1,7 +1,6 @@
 :root {
   font-family: 'Inter', sans-serif;
 
-  /* --- NEW & UPDATED Light Theme Variables --- */
   --background-color: #F7F8FA;
   --sidebar-bg: #FFFFFF;
   --card-bg: #FFFFFF;
@@ -13,32 +12,74 @@
   --green-positive: #10B981;
   --red-negative: #EF4444;
 
-  /* Add these for the new aesthetic */
   --card-border-radius: 20px;
   --card-box-shadow: 0px 10px 25px -5px rgba(22, 23, 24, 0.05);
 }
 
 [data-theme='dark'] {
-  /* Dark Theme Variables */
-  --background-color: #111827;
-  --sidebar-bg: #1F2937;
-  --card-bg: #1F2937;
-  --text-primary: #F9FAFB;
-  --text-secondary: #9CA3AF;
-  --border-color: #374151;
-  --accent-color: #60A5FA;
-  --accent-hover: #3B82F6;
-  --green-positive: #34D399;
-  --red-negative: #F87171;
+  
+  --background-color: #121212;
+  --card-bg: #1e1e1e;
+  --sidebar-bg: #1e1e1e; 
+  --sidebar-hover-bg: #282828;
+  --toolbar-bg: #282828; 
 
-  /* Make sure you have these if you added them */
-  --card-border-radius: 20px;
-  --card-box-shadow: 0px 10px 25px -5px rgba(0, 0, 0, 0.2);
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0; 
+  --text-light: #f5f5f5;
+  --text-dark: #666; 
+
+  --border-color: #383838;
+  --divider-color: #2e2e2e; 
+
+  --accent-color: #8b5cf6; 
+  --hover-color: #9f7aea; 
+  --button-primary-bg: #8b5cf6; 
+  --button-primary-text: #ffffff; 
+  --button-secondary-bg: #2e2e2e; 
+  --button-secondary-text: #e0e0e0; 
+
+  --status-in-progress: #60a5fa; 
+  --status-complete: #34d399; 
+  --status-pending: #fbbf24; 
+  --status-approved: #a78bfa; 
+  --status-rejected: #9ca3af;
+
+ 
+  --notification-bg: #2e2e2e;
+  --notification-border: #383838;
 }
+
 
 body {
   margin: 0;
-  background-color: var(--background-color);
-  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-color); 
+  color: var(--text-primary); 
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input, select, button {
+  font-family: inherit;
+  color: var(--text-primary);
+}
+
+input::placeholder {
+  color: var(--text-secondary);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--toolbar-bg);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
 }

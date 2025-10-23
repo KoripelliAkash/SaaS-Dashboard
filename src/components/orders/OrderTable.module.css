@@ -1,171 +1,89 @@
-/* Main Table Structure */
-.tableContainer {
-  width: 100%;
-  overflow-x: auto;
-}
-
-.orderTable {
-  width: 100%;
-  border-collapse: collapse;
-}
-
+.tableContainer { width: 100%; overflow-x: auto; }
+.orderTable { width: 100%; border-collapse: collapse; }
 .orderTable th, .orderTable td {
-  padding: 16px;
-  text-align: left;
-  border-bottom: 1px solid var(--border-color);
-  white-space: nowrap;
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    white-space: nowrap;
 }
-
 .orderTable th {
-  color: var(--text-secondary);
-  font-weight: 500;
-  font-size: 12px;
-  text-transform: uppercase;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
 }
-
 .orderTable td {
-  color: var(--text-primary);
-  font-weight: 500;
+    color: var(--text-primary);
+    font-weight: 500;
 }
-
-/* Row States */
 .orderTable tbody tr:hover {
-  background-color: var(--background-color);
+    background-color: var(--sidebar-hover-bg); 
 }
-
 .orderTable tbody tr.selected {
-  background-color: #E0F2FE; /* Light blue for selected row */
-}
-[data-theme='dark'] .orderTable tbody tr.selected {
-  background-color: rgba(59, 130, 246, 0.2);
+    background-color: rgba(139, 92, 246, 0.15);
 }
 
-/* Specific Cell Styles */
-.orderId {
-  color: var(--accent-color);
-  font-weight: 500;
-}
+.userCell { display: flex; align-items: center; gap: 12px; }
+.avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
 
-.userCell, .dateCell {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-/* Custom Checkbox */
 .orderTable input[type="checkbox"] {
-  appearance: none;
-  width: 18px;
-  height: 18px;
-  border: 2px solid var(--border-color);
-  border-radius: 4px;
-  cursor: pointer;
-  position: relative;
-  transition: all 0.2s ease;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
 }
-
-.orderTable input[type="checkbox"]:hover {
-  border-color: var(--accent-color);
-}
-
+.orderTable input[type="checkbox"]:hover { border-color: var(--accent-color); }
 .orderTable input[type="checkbox"]:checked {
-  background-color: var(--text-primary);
-  border-color: var(--text-primary);
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
 }
-[data-theme='dark'] .orderTable input[type="checkbox"]:checked {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-}
-
 .orderTable input[type="checkbox"]:checked::after {
-  content: '✔';
-  font-size: 14px;
-  color: var(--sidebar-bg);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    content: '✔';
+    font-size: 14px;
+    color: var(--background-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-/* Header Buttons & Sort Icons */
 .headerButton {
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 12px; /* Matched to other header text */
-  font-weight: 500;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 6px; 
+    background: none; border: none; padding: 0; margin: 0; cursor: pointer;
+    font-family: inherit; font-size: 12px; font-weight: 500;
+    color: var(--text-secondary); text-transform: uppercase;
+    display: flex; align-items: center; gap: 6px; 
+    transition: color 0.2s ease;
 }
+.headerButton:hover { color: var(--text-primary); }
+.sortIconInactive { opacity: 0.4; }
+.headerButton:hover .sortIconInactive { opacity: 1; }
 
-.headerButton:hover {
-  color: var(--text-primary);
-}
-
-.sortIconInactive {
-  opacity: 0.4;
-}
-
-.headerButton:hover .sortIconInactive {
-  opacity: 1;
-}
-
-/* Status Pills */
 .statusPill {
-  font-size: 12px;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px; /* A bit more space for the dot */
-  background-color: transparent !important; /* Remove any background */
-  padding: 0 !important; /* Remove any padding */
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent !important;
+    padding: 0 !important;
 }
+.statusPill::before { content: ''; width: 8px; height: 8px; border-radius: 50%; }
 
-.statusPill::before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
+.inProgress { color: var(--status-in-progress); }
+.inProgress::before { background-color: var(--status-in-progress); }
 
-/* New Status Colors for Dark Mode */
-.complete, .approved { 
-  color: #34D399; 
-}
-.complete::before, .approved::before { 
-  background-color: #34D399; 
-}
+.complete { color: var(--status-complete); }
+.complete::before { background-color: var(--status-complete); }
 
-.inProgress { 
-  color: #60A5FA; 
-}
-.inProgress::before { 
-  background-color: #60A5FA; 
-}
+.pending { color: var(--status-pending); }
+.pending::before { background-color: var(--status-pending); }
 
-.pending { 
-  color: #FBBF24; 
-}
-.pending::before { 
-  background-color: #FBBF24; 
-}
+.approved { color: var(--status-approved); }
+.approved::before { background-color: var(--status-approved); }
 
-.rejected { 
-  color: #9CA3AF; 
-}
-.rejected::before { 
-  background-color: #9CA3AF; 
-}
+.rejected { color: var(--status-rejected); }
+.rejected::before { background-color: var(--status-rejected); }
