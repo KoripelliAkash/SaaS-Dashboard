@@ -5,11 +5,27 @@
   overflow: hidden;
 }
 
-.mainContent {
+.contentWrapper {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   padding: 24px;
   background-color: var(--background-color);
+
+  /* --- Add these lines --- */
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+/* --- Add this entire new block --- */
+.contentWrapper::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+
+.mainContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
