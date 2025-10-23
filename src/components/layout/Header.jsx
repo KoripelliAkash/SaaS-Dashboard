@@ -3,7 +3,7 @@ import { ThemeContext } from '../../contexts/ThemeContext';
 import styles from './Header.module.css';
 import { FiSearch, FiSun, FiMoon, FiBell, FiLayout, FiStar, FiClock, FiGrid } from 'react-icons/fi';
 
-const Header = ({ activePage }) => {
+const Header = ({ activePage, toggleRightSidebar }) => { 
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
@@ -33,7 +33,7 @@ const Header = ({ activePage }) => {
         <button className={styles.actionButton}>
           <FiBell />
         </button>
-        <button className={styles.actionButton}>
+        <button className={styles.actionButton} onClick={toggleRightSidebar}>
           <FiGrid />
         </button>
       </div>

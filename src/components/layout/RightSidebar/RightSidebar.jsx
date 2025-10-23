@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './RightSidebar.module.css';
 import { FiAlertCircle, FiUserPlus, FiMessageSquare, FiUploadCloud, FiEdit3, FiTrash2, FiBell } from 'react-icons/fi';
 
-const RightSidebar = () => {
+const RightSidebar = ({ isOpen }) => {
   const contacts = [
     { name: 'Natali Craig', avatar: '/src/assets/avatar-natali.png' },
     { name: 'Drew Cano', avatar: '/src/assets/avatar-drew.png' },
@@ -11,9 +11,10 @@ const RightSidebar = () => {
     { name: 'Kate Morrison', avatar: '/src/assets/avatar-kate.png' },
     { name: 'Koray Okumus', avatar: '/src/assets/avatar-koray.png' },
   ];
+  const sidebarClasses = `${styles.rightSidebar} ${isOpen ? '' : styles.closed}`;
 
   return (
-    <aside className={styles.rightSidebar}>
+    <aside className={sidebarClasses}>
       {/* Notifications Section */}
       <section className={styles.section}>
         <h4 className={styles.sectionTitle}>Notifications</h4>
