@@ -1,3 +1,4 @@
+/* Main Table Structure */
 .tableContainer {
   width: 100%;
   overflow-x: auto;
@@ -18,7 +19,7 @@
 .orderTable th {
   color: var(--text-secondary);
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
 }
 
@@ -27,6 +28,7 @@
   font-weight: 500;
 }
 
+/* Row States */
 .orderTable tbody tr:hover {
   background-color: var(--background-color);
 }
@@ -38,9 +40,13 @@
   background-color: rgba(59, 130, 246, 0.2);
 }
 
+/* Specific Cell Styles */
+.orderId {
+  color: var(--accent-color);
+  font-weight: 500;
+}
 
-/* User Cell with Avatar */
-.userCell {
+.userCell, .dateCell {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -88,15 +94,44 @@
   transform: translate(-50%, -50%);
 }
 
-/* Updated Status Pills */
-.statusPill {
-  padding: 4px 10px;
-  border-radius: 16px;
+/* Header Buttons & Sort Icons */
+.headerButton {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px; /* Matched to other header text */
   font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px; 
+}
+
+.headerButton:hover {
+  color: var(--text-primary);
+}
+
+.sortIconInactive {
+  opacity: 0.4;
+}
+
+.headerButton:hover .sortIconInactive {
+  opacity: 1;
+}
+
+/* Status Pills */
+.statusPill {
   font-size: 12px;
+  font-weight: 500;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px; /* A bit more space for the dot */
+  background-color: transparent !important; /* Remove any background */
+  padding: 0 !important; /* Remove any padding */
 }
 
 .statusPill::before {
@@ -106,19 +141,31 @@
   border-radius: 50%;
 }
 
-.complete { color: #059669; background-color: #D1FAE5; }
-.complete::before { background-color: #10B981; }
+/* New Status Colors for Dark Mode */
+.complete, .approved { 
+  color: #34D399; 
+}
+.complete::before, .approved::before { 
+  background-color: #34D399; 
+}
 
-.pending { color: #06B6D4; background-color: #CFFAFE; }
-.pending::before { background-color: #06B6D4; }
+.inProgress { 
+  color: #60A5FA; 
+}
+.inProgress::before { 
+  background-color: #60A5FA; 
+}
 
-.approved { color: #D97706; background-color: #FEF3C7; }
-.approved::before { background-color: #F59E0B; }
+.pending { 
+  color: #FBBF24; 
+}
+.pending::before { 
+  background-color: #FBBF24; 
+}
 
-.rejected { color: #71717A; background-color: #F4F4F5; }
-.rejected::before { background-color: #71717A; }
-
-[data-theme='dark'] .complete { color: #6EE7B7; background-color: rgba(16, 185, 129, 0.2); }
-[data-theme='dark'] .pending { color: #67E8F9; background-color: rgba(6, 182, 212, 0.2); }
-[data-theme='dark'] .approved { color: #FCD34D; background-color: rgba(245, 158, 11, 0.2); }
-[data-theme='dark'] .rejected { color: #A1A1AA; background-color: rgba(113, 113, 122, 0.2); }
+.rejected { 
+  color: #9CA3AF; 
+}
+.rejected::before { 
+  background-color: #9CA3AF; 
+}

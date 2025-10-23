@@ -75,3 +75,39 @@
   transform: translateY(-50%);
   color: var(--text-secondary);
 }
+
+.filterWrapper {
+    display: flex;
+    align-items: center;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding-left: 12px; 
+    color: var(--text-secondary);
+    transition: border-color 0.2s ease;
+}
+
+.filterWrapper:hover {
+    border-color: var(--accent-color);
+}
+
+.filterSelect {
+    background-color: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.filterSelect:focus {
+    outline: none;
+}
+
+.filterSelect option {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+}
