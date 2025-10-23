@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import styles from './App.module.css';
 import Sidebar from './components/layout/Sidebar';
 import Header from './components/layout/Header';
@@ -6,13 +6,30 @@ import RightSidebar from './components/layout/RightSidebar/RightSidebar';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Orders from './pages/Orders/Orders';
 import NotificationsPopup from './components/common/NotificationsPopup';
+import useWindowSize from './hooks/useWindowSize';
 
 const App = () => {
+
+  const { width } = useWindowSize();
+  const isTablet = width <= 1024;
+  
+  
+
   const [activePage, setActivePage] = useState('eCommerce');
   const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(true);
   const [isLeftSidebarOpen, setIsLeftSidebarOpen] = useState(true);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
   const [favorites, setFavorites] = useState(['']); 
+
+  useEffect(() => {
+    if (isTablet) {
+      setIsLeftSidebarOpen(false);
+      setIsRightSidebarOpen(false);
+    } else {
+      setIsLeftSidebarOpen(true);
+      setIsRightSidebarOpen(true);
+    }
+  }, [isTablet]);
 
   const toggleFavorite = (pageId) => {
     setFavorites((prevFavorites) => {
@@ -34,7 +51,8 @@ const App = () => {
       />
       
       <Sidebar 
-        isOpen={isLeftSidebarOpen} 
+        isOpen={isLeftSidebarOpen}
+        toggleSidebar={toggleLeftSidebar}
         activePage={activePage} 
         setActivePage={setActivePage}
         favorites={favorites} // Pass the list of favorites
@@ -55,7 +73,10 @@ const App = () => {
         </main>
       </div>
       
-      {(activePage === 'eCommerce' || activePage === 'Projects') && <RightSidebar isOpen={isRightSidebarOpen} />}
+      {(activePage === 'eCommerce' || activePage === 'Projects') && <RightSidebar 
+            isOpen={isRightSidebarOpen} 
+            toggleSidebar={toggleRightSidebar}
+        />}
     </div>
   );
 };

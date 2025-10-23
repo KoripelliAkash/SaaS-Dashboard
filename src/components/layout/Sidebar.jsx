@@ -3,7 +3,7 @@ import styles from './Sidebar.module.css';
 import {
   FiHome, FiLayers, FiGrid, FiShoppingCart, FiBookOpen,
   FiFileText, FiUsers, FiTarget, FiFile, FiUser, FiBriefcase,
-  FiEdit3, FiShare2, FiStar, FiClock
+  FiEdit3, FiShare2, FiStar, FiClock, FiX
 } from 'react-icons/fi';
 
 import logoImage from '../../assets/logo.jpg';
@@ -52,14 +52,19 @@ const sidebarSections = [
   },
 ];
 
-const Sidebar = ({ isOpen, activePage, setActivePage, favorites }) => {
+const Sidebar = ({ isOpen, toggleSidebar, activePage, setActivePage, favorites }) => {
   const sidebarClasses = `${styles.sidebar} ${isOpen ? '' : styles.closed}`;
 
   return (
     <aside className={sidebarClasses}>
-      <div className={styles.logo}>
-        <img src={logoImage} alt="Logo" className={styles.logoImage} />
-        <h3>Byewind</h3>
+      <div className={styles.header}>
+        <div className={styles.logo}>
+          <img src={logoImage} alt="Logo" className={styles.logoImage} />
+          <h3>Byewind</h3>
+        </div>
+        <button className={styles.closeButton} onClick={toggleSidebar}>
+          <FiX />
+        </button>
       </div>
       
       <div className={styles.topLinks}>
