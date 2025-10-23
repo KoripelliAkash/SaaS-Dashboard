@@ -6,7 +6,6 @@
   width: 100%;
 }
 
-/* --- NEW: Breadcrumbs styles --- */
 .breadcrumbs {
   display: flex;
   align-items: center;
@@ -38,7 +37,6 @@
   font-size: 14px;
   color: var(--text-primary);
 }
-/* --- End Breadcrumbs styles --- */
 
 
 .searchBar {
@@ -103,4 +101,9 @@
 .actionButton:hover {
   background-color: var(--background-color);
   color: var(--text-primary);
+}
+
+.favoriteActive {
+  fill: #FBBF24;
+  color: #FBBF24;
 }

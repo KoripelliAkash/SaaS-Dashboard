@@ -6,6 +6,11 @@ import {
   FiEdit3, FiShare2, FiStar, FiClock
 } from 'react-icons/fi';
 
+const pageMap = {
+  'eCommerce': { name: 'eCommerce', icon: <FiShoppingCart /> },
+  'Projects': { name: 'Projects', icon: <FiLayers /> },
+};
+
 const sidebarSections = [
   {
     title: 'Dashboards',
@@ -45,15 +50,15 @@ const sidebarSections = [
   },
 ];
 
-const Sidebar = ({ isOpen, activePage, setActivePage }) => {
+const Sidebar = ({ isOpen, activePage, setActivePage, favorites }) => {
   const sidebarClasses = `${styles.sidebar} ${isOpen ? '' : styles.closed}`;
+
   return (
     <aside className={sidebarClasses}>
       <div className={styles.logo}>
         <h3>Byewind</h3>
       </div>
       
-      {/* Top Links */}
       <div className={styles.topLinks}>
         <div className={styles.topLinkItem}>
           <FiStar />
@@ -66,6 +71,30 @@ const Sidebar = ({ isOpen, activePage, setActivePage }) => {
       </div>
 
       <nav className={styles.nav}>
+        <div className={styles.navSection}>
+          <p className={styles.navTitle}>Favorites</p>
+          <ul>
+            {favorites.map((favId) => {
+              const page = pageMap[favId];
+              if (!page) return null;
+              return (
+                <li
+                  key={page.name}
+                  className={`${styles.navItem} ${activePage === favId ? styles.active : ''}`}
+                  onClick={() => setActivePage(favId)}
+                >
+                  {page.icon}
+                  <span>{page.name}</span>
+                </li>
+              );
+            })}
+            {favorites.length === 0 && (
+              <li className={styles.noFavorites}>No favorites yet.</li>
+            )}
+          </ul>
+        </div>
+
+        {/* This renders your other, static sections */}
         {sidebarSections.map((section) => (
           <div key={section.title} className={styles.navSection}>
             <p className={styles.navTitle}>{section.title}</p>

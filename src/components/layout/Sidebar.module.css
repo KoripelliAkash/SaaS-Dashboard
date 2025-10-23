@@ -29,7 +29,6 @@
   color: var(--text-primary);
 }
 
-/* --- NEW STYLES for top links --- */
 .topLinks {
   margin-bottom: 16px;
   border-bottom: 1px solid var(--border-color);
@@ -52,13 +51,24 @@
   background-color: var(--background-color);
   color: var(--text-primary);
 }
-/* --- END NEW STYLES --- */
 
+
+.favoriteActive {
+  fill: #FBBF24;
+  color: #FBBF24;
+}
+
+.noFavorites {
+  font-size: 12px;
+  color: var(--text-secondary);
+  padding: 10px 16px;
+  font-style: italic;
+}
 
 .nav {
   display: flex;
   flex-direction: column;
-  gap: 16px; /* Space between sections */
+  gap: 16px; 
 }
 
 .navTitle {
@@ -66,7 +76,7 @@
   font-weight: 600;
   color: var(--text-secondary);
   text-transform: uppercase;
-  margin: 16px 0 8px 16px; /* Adjusted margin */
+  margin: 16px 0 8px 16px; 
 }
 
 .nav ul {
@@ -79,12 +89,12 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 16px; /* Adjusted padding */
+  padding: 10px 16px; 
   border-radius: 8px;
   cursor: pointer;
   color: var(--text-secondary);
   font-weight: 500;
-  font-size: 14px; /* Slightly smaller font */
+  font-size: 14px; 
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -102,7 +112,6 @@
   background-color: var(--accent-hover);
 }
 
-/* --- NEW STYLE for sub-items --- */
 .subItem {
-  padding-left: 44px; /* Indent sub-items */
+  padding-left: 44px;
 }
