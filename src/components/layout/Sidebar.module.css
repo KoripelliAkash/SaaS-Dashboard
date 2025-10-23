@@ -18,6 +18,7 @@
   padding-left: 0;
   padding-right: 0;
   overflow: hidden;
+  border-right: none;
 }
 
 .sidebar::-webkit-scrollbar {
@@ -26,11 +27,11 @@
 
 .logo {
   margin-bottom: 24px;
-  color: var(--text-primary);
+  color: var(--text-primary); /* Ensures logo text is visible */
   font-weight: 600;
-  display: flex; 
-  align-items: center; 
-  gap: 12px; 
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .logoImage {
@@ -52,7 +53,7 @@
   gap: 12px;
   padding: 8px 16px;
   cursor: pointer;
-  color: var(--text-secondary);
+  color: var(--text-secondary); /* Ensures "Favorites" text is visible */
   font-weight: 500;
   border-radius: 8px;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -68,7 +69,6 @@
   color: var(--text-secondary);
   padding: 10px 16px;
   font-style: italic;
-  opacity: 0.7;
 }
 
 .nav {
@@ -85,10 +85,9 @@
 .navTitle {
   font-size: 11px;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: var(--text-secondary); /* Ensures section titles are visible */
   text-transform: uppercase;
   margin: 16px 0 8px 16px; 
-  opacity: 0.7;
 }
 
 .nav ul {
@@ -104,7 +103,7 @@
   padding: 10px 16px; 
   border-radius: 8px;
   cursor: pointer;
-  color: var(--text-secondary);
+  color: var(--text-secondary); /* Ensures nav item text and icons are visible */
   font-weight: 500;
   font-size: 14px; 
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -122,9 +121,27 @@
 }
 
 .navItem.active:hover {
-  background-color: var(--sidebar-hover-bg); 
+  background-color: var(--sidebar-hover-bg);
 }
 
 .subItem {
   padding-left: 44px;
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+  
+    position: fixed; 
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100; 
+    transform: translateX(0); 
+  }
+
+  .sidebar.closed {
+    transform: translateX(-100%);
+    width: 250px; 
+    padding: 24px; 
+  }
 }

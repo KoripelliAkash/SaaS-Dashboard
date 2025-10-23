@@ -1,5 +1,5 @@
 .rightSidebar {
-  width: 300px;
+  width: 300px; 
   background-color: var(--sidebar-bg);
   border-left: 1px solid var(--border-color);
   padding: 24px;
@@ -8,15 +8,20 @@
   gap: 32px;
   overflow-y: auto;
   flex-shrink: 0;
-  white-space: nowrap; 
-  transition: width 0.3s ease-in-out, padding 0.3s ease-in-out;
+  white-space: nowrap;
+  transition: width 0.3s ease-in-out, padding 0.3s ease-in-out, transform 0.3s ease-in-out; 
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+.rightSidebar::-webkit-scrollbar { display: none; }
+
 
 .rightSidebar.closed {
   width: 0;
   padding-left: 0;
   padding-right: 0;
-  overflow: hidden; /* Hide content when collapsed */
+  overflow: hidden;
+  border-left: none;
 }
 
 .sectionTitle {
@@ -27,7 +32,6 @@
   margin-bottom: 20px;
 }
 
-/* Notifications */
 .notificationList {
   list-style: none;
   padding: 0;
@@ -36,7 +40,7 @@
 
 .notificationItem {
   display: flex;
-  align-items: flex-start; /* Align icon and text at the top */
+  align-items: flex-start; 
   gap: 12px;
   margin-bottom: 16px;
 }
@@ -46,10 +50,10 @@
 }
 
 .notificationItem .icon {
-  color: var(--accent-color); /* Primary color for notification icons */
+  color: var(--accent-color);
   font-size: 18px;
-  flex-shrink: 0; /* Prevent icon from shrinking */
-  padding-top: 2px; /* Small adjustment for visual alignment */
+  flex-shrink: 0;
+  padding-top: 2px;
 }
 
 .notificationText {
@@ -66,7 +70,6 @@
 }
 
 
-/* Activities */
 .activityList {
     list-style: none;
     padding: 0;
@@ -96,15 +99,15 @@
 
 .activityIcon {
     font-size: 16px;
-    color: white; /* Icons in activity pills are white */
+    color: white;
 }
 
-/* Specific background colors for activity icons */
-.bug { background-color: #EF4444; } /* Red */
-.release { background-color: #3B82F6; } /* Blue */
-.submit { background-color: #F59E0B; } /* Yellow/Orange */
-.modified { background-color: #10B981; } /* Green */
-.deleted { background-color: #6B7280; } /* Grey */
+
+.bug { background-color: #EF4444; }
+.release { background-color: #3B82F6; } 
+.submit { background-color: #F59E0B; } 
+.modified { background-color: #10B981; } 
+.deleted { background-color: #6B7280; } 
 
 
 .activityText {
@@ -120,7 +123,6 @@
     color: var(--text-secondary);
 }
 
-/* Contacts */
 .contactList {
   list-style: none;
   padding: 0;
@@ -150,4 +152,27 @@
   font-size: 14px;
   color: var(--text-primary);
   font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .rightSidebar {
+    width: 260px; 
+  }
+}
+
+@media (max-width: 767px) {
+  .rightSidebar {
+    position: fixed; 
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    transform: translateX(0); 
+  }
+
+  .rightSidebar.closed {
+    transform: translateX(100%);
+    width: 260px; 
+    padding: 24px;
+  }
 }

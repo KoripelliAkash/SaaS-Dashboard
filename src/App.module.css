@@ -2,30 +2,42 @@
   display: flex;
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
+  overflow: hidden; 
 }
 
 .contentWrapper {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  overflow-y: auto; 
   padding: 24px;
   background-color: var(--background-color);
-
-  /* --- Add these lines --- */
-  scrollbar-width: none; /* For Firefox */
-  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-
-/* --- Add this entire new block --- */
-.contentWrapper::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari, and Opera */
-}
-
+.contentWrapper::-webkit-scrollbar { display: none; }
 
 .mainContent {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 1024px) {
+  .contentWrapper {
+    padding: 16px; 
+  }
+}
+
+@media (max-width: 767px) {
+
+  .appContainer {
+      
+      position: relative; 
+  }
+
+  .contentWrapper {
+    padding: 12px; 
+  }
+
 }

@@ -95,3 +95,17 @@
     transform: translateY(-50%);
     color: var(--text-secondary);
 }
+
+@media (max-width: 767px) {
+  .toolbar {
+    flex-direction: column; 
+    align-items: stretch; 
+    gap: 12px;
+  }
+  .searchBar input {
+    width: 100%; 
+  }
+  .toolbarActions {
+      justify-content: space-between; 
+  }
+}

@@ -1,4 +1,7 @@
-.tableContainer { width: 100%; overflow-x: auto; }
+.tableContainer { 
+  width: 100%; 
+  overflow-x: auto; 
+}
 .orderTable { width: 100%; border-collapse: collapse; }
 .orderTable th, .orderTable td {
     padding: 16px;

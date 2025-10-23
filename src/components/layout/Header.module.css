@@ -4,6 +4,17 @@
   align-items: center;
   margin-bottom: 24px;
   width: 100%;
+  gap: 16px; 
+}
+
+.breadcrumbs { 
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-secondary);
+  flex-shrink: 1; 
+  overflow: hidden; 
+  white-space: nowrap;
 }
 
 .breadcrumbs {
@@ -81,7 +92,8 @@
 .headerActions {
   display: flex;
   align-items: center;
-  gap: 8px; /* Reduced gap for a tighter look */
+  gap: 8px;
+  flex-shrink: 0;
 }
 
 .actionButton {
@@ -91,7 +103,7 @@
   font-size: 20px;
   cursor: pointer;
   padding: 8px;
-  border-radius: 8px; /* Changed to square radius */
+  border-radius: 8px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,4 +118,35 @@
 .favoriteActive {
   fill: #FBBF24;
   color: #FBBF24;
+}
+
+@media (max-width: 767px) {
+  .header {
+    flex-wrap: wrap; 
+    margin-bottom: 16px;
+  }
+  
+  .breadcrumbs .breadcrumbText, .breadcrumbs .breadcrumbSeparator {
+    display: none;
+  }
+  .breadcrumbActive { 
+      margin-left: 8px;
+  }
+
+  .searchBar input {
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+   .searchBar {
+       display: none; 
+   }
+   .headerActions {
+       gap: 4px; 
+   }
+   .actionButton {
+       padding: 6px; 
+       font-size: 18px;
+   }
 }

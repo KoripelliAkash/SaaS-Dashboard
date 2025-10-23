@@ -1,12 +1,8 @@
 .dashboardContainer {
-  animation: fadeIn 0.5s ease-in-out;
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(12px);
-  border-radius: 1rem;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -70,6 +66,26 @@
   flex-direction: column;
 }
 
+.topRow {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr; 
+  gap: 24px;
+  align-items: start;
+}
+
+.statCardStack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bottomRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr; 
+  gap: 24px;
+  align-items: start;
+}
+
 @media (max-width: 992px) {
   .row {
     grid-template-columns: 1fr; 
@@ -130,5 +146,27 @@
 @media (max-width: 768px) {
   .grd {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .topRow {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  .topRow > *:nth-child(3) { 
+      grid-column: 1 / -1; 
+  }
+
+  .bottomRow {
+    grid-template-columns: 1fr; 
+  }
+}
+
+@media (max-width: 767px) {
+  .topRow {
+    grid-template-columns: 1fr; 
+  }
+  .topRow > *:nth-child(3) {
+      grid-column: auto; 
   }
 }
