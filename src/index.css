@@ -19,8 +19,19 @@
 }
 
 [data-theme='dark'] {
-  /* ... your dark theme variables ... */
-  /* You can update these to match a darker version of a2 if you wish */
+  /* Dark Theme Variables */
+  --background-color: #111827;
+  --sidebar-bg: #1F2937;
+  --card-bg: #1F2937;
+  --text-primary: #F9FAFB;
+  --text-secondary: #9CA3AF;
+  --border-color: #374151;
+  --accent-color: #60A5FA;
+  --accent-hover: #3B82F6;
+  --green-positive: #34D399;
+  --red-negative: #F87171;
+
+  /* Make sure you have these if you added them */
   --card-border-radius: 20px;
   --card-box-shadow: 0px 10px 25px -5px rgba(0, 0, 0, 0.2);
 }

@@ -6,7 +6,6 @@ import {
   FiEdit3, FiShare2, FiStar, FiClock
 } from 'react-icons/fi';
 
-// New, detailed data structure for the sidebar
 const sidebarSections = [
   {
     title: 'Dashboards',
@@ -46,9 +45,10 @@ const sidebarSections = [
   },
 ];
 
-const Sidebar = ({ activePage, setActivePage }) => {
+const Sidebar = ({ isOpen, activePage, setActivePage }) => {
+  const sidebarClasses = `${styles.sidebar} ${isOpen ? '' : styles.closed}`;
   return (
-    <aside className={styles.sidebar}>
+    <aside className={sidebarClasses}>
       <div className={styles.logo}>
         <h3>Byewind</h3>
       </div>
