@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './StatCard.module.css';
-import { FiArrowUp, FiArrowDown } from 'react-icons/fi';
+import { FiTrendingUp, FiTrendingDown } from 'react-icons/fi'; // <-- Use better icons
 
 const StatCard = ({ title, value, percentage, isPositive }) => {
   const percentageClass = isPositive ? styles.positive : styles.negative;
@@ -8,12 +8,13 @@ const StatCard = ({ title, value, percentage, isPositive }) => {
   return (
     <div className={styles.card}>
       <p className={styles.title}>{title}</p>
-      <div className={styles.valueContainer}>
-        <h2 className={styles.value}>{value}</h2>
+      <h2 className={styles.value}>{value}</h2>
+      <div className={styles.footer}>
         <span className={`${styles.percentage} ${percentageClass}`}>
-          {isPositive ? <FiArrowUp /> : <FiArrowDown />}
+          {isPositive ? <FiTrendingUp /> : <FiTrendingDown />}
           {percentage}%
         </span>
+        <FiTrendingUp className={styles.chartIcon} /> {/* Small trend icon */}
       </div>
     </div>
   );

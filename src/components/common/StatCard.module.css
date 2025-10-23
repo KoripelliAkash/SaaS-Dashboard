@@ -1,14 +1,15 @@
+/* Replace entire file content */
 .card {
   background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--card-box-shadow);
   padding: 24px;
   transition: all 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0px 10px 30px -5px rgba(22, 23, 24, 0.1);
 }
 
 .title {
@@ -17,17 +18,17 @@
   font-weight: 500;
 }
 
-.valueContainer {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-}
-
 .value {
-  margin: 0;
+  margin: 0 0 16px 0;
   font-size: 32px;
   font-weight: 700;
   color: var(--text-primary);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .percentage {
@@ -36,12 +37,21 @@
   gap: 4px;
   font-weight: 600;
   font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 12px;
 }
 
 .positive {
   color: var(--green-positive);
+  background-color: rgba(16, 185, 129, 0.1);
 }
 
 .negative {
   color: var(--red-negative);
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.chartIcon {
+  color: var(--text-secondary);
+  opacity: 0.5;
 }

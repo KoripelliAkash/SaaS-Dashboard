@@ -12,14 +12,15 @@ const App = () => {
   return (
     <div className={styles.appContainer}>
       <Sidebar activePage={activePage} setActivePage={setActivePage} />
-      <div className={styles.contentWrapper}> {/* New wrapper for main content + header */}
+      <div className={styles.contentWrapper}>
         <Header />
         <main className={styles.mainContent}>
           {activePage === 'eCommerce' && <Dashboard />}
           {activePage === 'Projects' && <Orders />}
         </main>
       </div>
-      {activePage === 'eCommerce' && <RightSidebar />} {/* Rendered only if activePage is 'eCommerce' */}
+      {activePage === 'eCommerce' && <RightSidebar />}
+      {activePage === 'Projects' && <Orders />}
     </div>
   );
 };

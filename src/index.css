@@ -1,10 +1,7 @@
-/* Global styles and font imports */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 :root {
   font-family: 'Inter', sans-serif;
 
-  /* Light Theme Variables */
+  /* --- NEW & UPDATED Light Theme Variables --- */
   --background-color: #F7F8FA;
   --sidebar-bg: #FFFFFF;
   --card-bg: #FFFFFF;
@@ -15,20 +12,17 @@
   --accent-hover: #2563EB;
   --green-positive: #10B981;
   --red-negative: #EF4444;
+
+  /* Add these for the new aesthetic */
+  --card-border-radius: 20px;
+  --card-box-shadow: 0px 10px 25px -5px rgba(22, 23, 24, 0.05);
 }
 
 [data-theme='dark'] {
-  /* Dark Theme Variables */
-  --background-color: #111827;
-  --sidebar-bg: #1F2937;
-  --card-bg: #1F2937;
-  --text-primary: #F9FAFB;
-  --text-secondary: #9CA3AF;
-  --border-color: #374151;
-  --accent-color: #60A5FA;
-  --accent-hover: #3B82F6;
-  --green-positive: #34D399;
-  --red-negative: #F87171;
+  /* ... your dark theme variables ... */
+  /* You can update these to match a darker version of a2 if you wish */
+  --card-border-radius: 20px;
+  --card-box-shadow: 0px 10px 25px -5px rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -37,5 +31,3 @@ body {
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-/* Add other global styles here */

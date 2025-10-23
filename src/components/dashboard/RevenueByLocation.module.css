@@ -1,0 +1,71 @@
+.container {
+  background-color: var(--card-bg);
+  padding: 24px;
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--card-box-shadow);
+  height: 100%;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.mapContainer {
+  width: 100%;
+  height: 180px; /* <-- This height is important */
+  margin-bottom: 20px;
+}
+
+
+.mapImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.locationList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.locationItem {
+  width: 100%;
+}
+
+.locationInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.locationName {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.locationValue {
+  color: var(--text-secondary);
+}
+
+.progressBar {
+  width: 100%;
+  height: 6px;
+  background-color: #F3F4F6; /* A light grey for the bar background */
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: var(--accent-color);
+  border-radius: 3px;
+}
