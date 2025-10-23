@@ -1,25 +1,25 @@
 .tableContainer {
   width: 100%;
-  overflow-x: auto; /* For responsiveness on small screens */
+  overflow-x: auto;
 }
 
 .orderTable {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
 }
 
 .orderTable th, .orderTable td {
   padding: 16px;
   text-align: left;
   border-bottom: 1px solid var(--border-color);
-  white-space: nowrap; /* Prevent text wrapping */
+  white-space: nowrap;
 }
 
 .orderTable th {
   color: var(--text-secondary);
   font-weight: 500;
   font-size: 14px;
+  text-transform: uppercase;
 }
 
 .orderTable td {
@@ -27,18 +27,76 @@
   font-weight: 500;
 }
 
-.orderId {
-  font-weight: 600;
-  color: var(--accent-color);
+.orderTable tbody tr:hover {
+  background-color: var(--background-color);
 }
 
+.orderTable tbody tr.selected {
+  background-color: #E0F2FE; /* Light blue for selected row */
+}
+[data-theme='dark'] .orderTable tbody tr.selected {
+  background-color: rgba(59, 130, 246, 0.2);
+}
+
+
+/* User Cell with Avatar */
+.userCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Custom Checkbox */
+.orderTable input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.orderTable input[type="checkbox"]:hover {
+  border-color: var(--accent-color);
+}
+
+.orderTable input[type="checkbox"]:checked {
+  background-color: var(--text-primary);
+  border-color: var(--text-primary);
+}
+[data-theme='dark'] .orderTable input[type="checkbox"]:checked {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.orderTable input[type="checkbox"]:checked::after {
+  content: '✔';
+  font-size: 14px;
+  color: var(--sidebar-bg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Updated Status Pills */
 .statusPill {
-  padding: 6px 12px;
+  padding: 4px 10px;
   border-radius: 16px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 12px;
   display: inline-flex;
   align-items: center;
+  gap: 6px;
 }
 
 .statusPill::before {
@@ -46,43 +104,21 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  margin-right: 8px;
 }
 
-.complete {
-  color: #059669;
-  background-color: #D1FAE5;
-}
+.complete { color: #059669; background-color: #D1FAE5; }
 .complete::before { background-color: #10B981; }
 
-.inProgress {
-  color: #2563EB;
-  background-color: #DBEAFE;
-}
-.inProgress::before { background-color: #3B82F6; }
+.pending { color: #06B6D4; background-color: #CFFAFE; }
+.pending::before { background-color: #06B6D4; }
 
-.pending {
-  color: #D97706;
-  background-color: #FEF3C7;
-}
-.pending::before { background-color: #F59E0B; }
+.approved { color: #D97706; background-color: #FEF3C7; }
+.approved::before { background-color: #F59E0B; }
 
-.rejected {
-  color: #DC2626;
-  background-color: #FEE2E2;
-}
-.rejected::before { background-color: #EF4444; }
+.rejected { color: #71717A; background-color: #F4F4F5; }
+.rejected::before { background-color: #71717A; }
 
-/* Dark mode adjustments for pills */
-[data-theme='dark'] .complete {
-  color: #6EE7B7; background-color: rgba(16, 185, 129, 0.2);
-}
-[data-theme='dark'] .inProgress {
-  color: #93C5FD; background-color: rgba(59, 130, 246, 0.2);
-}
-[data-theme='dark'] .pending {
-  color: #FCD34D; background-color: rgba(245, 158, 11, 0.2);
-}
-[data-theme='dark'] .rejected {
-  color: #FCA5A5; background-color: rgba(239, 68, 68, 0.2);
-}
+[data-theme='dark'] .complete { color: #6EE7B7; background-color: rgba(16, 185, 129, 0.2); }
+[data-theme='dark'] .pending { color: #67E8F9; background-color: rgba(6, 182, 212, 0.2); }
+[data-theme='dark'] .approved { color: #FCD34D; background-color: rgba(245, 158, 11, 0.2); }
+[data-theme='dark'] .rejected { color: #A1A1AA; background-color: rgba(113, 113, 122, 0.2); }

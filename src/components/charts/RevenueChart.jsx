@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 import { ThemeContext } from '../../contexts/ThemeContext';
-import styles from './RevenueChart.module.css'; // We'll create this file next
+import styles from './RevenueChart.module.css'; 
 
-// Placeholder data
 const data = [
   { name: 'Jan', current: 12000, previous: 15000 },
   { name: 'Feb', current: 21000, previous: 19000 },
@@ -53,4 +52,4 @@ const RevenueChart = () => {
   );
 };
 
-export default RevenueChart; // This line is the solution!
+export default RevenueChart; 
