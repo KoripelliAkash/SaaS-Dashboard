@@ -103,11 +103,11 @@
   }
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .grd {
     grid-template-columns: 1fr;
   }
-}
+} */
 
 @media (max-width: 500px) {
   .dashboardContainer {
@@ -140,11 +140,11 @@
   }
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .grd {
     grid-template-columns: 1fr;
   }
-}
+} */
 
 @media (max-width: 1024px) {
   .topRow {
