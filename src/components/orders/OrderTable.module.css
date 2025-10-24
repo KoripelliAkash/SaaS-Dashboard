@@ -8,19 +8,16 @@
   scrollbar-width: thin;
   scrollbar-color: var(--border-color) transparent;
 }
-
 .tableContainer::-webkit-scrollbar {
-  height: 6px;
-  width: 6px;
+  height: 8px;
+  width: 8px;
 }
-
 .tableContainer::-webkit-scrollbar-track {
   background: transparent;
 }
-
 .tableContainer::-webkit-scrollbar-thumb {
   background-color: var(--border-color);
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 .orderTable {
@@ -28,13 +25,12 @@
   border-collapse: separate;
   border-spacing: 0;
 }
-
 .orderTable th, .orderTable td {
   padding: 16px;
   text-align: left;
   border-bottom: 1px solid var(--border-color);
   white-space: nowrap;
-  min-width: 100px;
+  min-width: 120px;
 }
 .orderTable th {
   color: var(--text-secondary);
@@ -47,14 +43,15 @@
   z-index: 1;
 }
 .orderTable td {
-    color: var(--text-primary);
-    font-weight: 500;
+  color: var(--text-primary);
+  font-weight: 500;
 }
+
 .orderTable tbody tr:hover {
-    background-color: var(--sidebar-hover-bg); 
+  background-color: var(--sidebar-hover-bg);
 }
 .orderTable tbody tr.selected {
-    background-color: rgba(139, 92, 246, 0.15);
+  background-color: rgba(139, 92, 246, 0.15);
 }
 
 .userCell {
@@ -63,7 +60,6 @@
   gap: 12px;
   min-width: 200px;
 }
-
 .avatar {
   width: 32px;
   height: 32px;
@@ -71,80 +67,11 @@
   object-fit: cover;
   flex-shrink: 0;
 }
-
 .dateCell {
   display: flex;
   align-items: center;
   gap: 8px;
-  min-width: 120px;
-}
-
-/* Tablet styles */
-@media (max-width: 1024px) {
-  .orderTable th, .orderTable td {
-    padding: 12px;
-  }
-
-  .avatar {
-    width: 28px;
-    height: 28px;
-  }
-
-  .headerButton {
-    font-size: 11px;
-  }
-
-  .statusPill {
-    font-size: 11px;
-  }
-}
-
-/* Mobile styles */
-@media (max-width: 767px) {
-  .orderTable th, .orderTable td {
-    padding: 10px;
-  }
-
-  .avatar {
-    width: 24px;
-    height: 24px;
-  }
-
-  .userCell {
-    min-width: 160px;
-    gap: 8px;
-  }
-
-  .dateCell {
-    min-width: 100px;
-    gap: 6px;
-  }
-
-  .headerButton {
-    font-size: 10px;
-    gap: 4px;
-  }
-
-  .statusPill {
-    font-size: 10px;
-    gap: 6px;
-  }
-
-  .statusPill::before {
-    width: 6px;
-    height: 6px;
-  }
-}
-
-/* Small mobile styles */
-@media (max-width: 480px) {
-  .orderTable th, .orderTable td {
-    padding: 8px;
-  }
-
-  .userCell {
-    min-width: 140px;
-  }
+  min-width: 150px;
 }
 
 .orderTable input[type="checkbox"] {
@@ -158,52 +85,27 @@
   transition: all 0.2s ease;
   flex-shrink: 0;
 }
-
 .orderTable input[type="checkbox"]:hover {
   border-color: var(--accent-color);
 }
-
 .orderTable input[type="checkbox"]:checked {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
 }
-
 .orderTable input[type="checkbox"]:checked::after {
   content: '✔';
   font-size: 14px;
-  color: var(--background-color);
+  color: #fff;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-@media (max-width: 1024px) {
-  .orderTable input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-  }
-
-  .orderTable input[type="checkbox"]:checked::after {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 767px) {
-  .orderTable input[type="checkbox"] {
-    width: 14px;
-    height: 14px;
-  }
-
-  .orderTable input[type="checkbox"]:checked::after {
-    font-size: 10px;
-  }
-}
-
 .headerButton {
   background: none;
   border: none;
-  padding: 8px 0;
+  padding: 0;
   margin: 0;
   cursor: pointer;
   font-family: inherit;
@@ -217,9 +119,15 @@
   transition: all 0.2s ease;
   white-space: nowrap;
 }
-.headerButton:hover { color: var(--text-primary); }
-.sortIconInactive { opacity: 0.4; }
-.headerButton:hover .sortIconInactive { opacity: 1; }
+.headerButton:hover {
+  color: var(--text-primary);
+}
+.sortIconInactive {
+  opacity: 0.4;
+}
+.headerButton:hover .sortIconInactive {
+  opacity: 1;
+}
 
 .statusPill {
   font-size: 12px;
@@ -231,19 +139,111 @@
   padding: 0 !important;
   min-width: 100px;
 }
-.statusPill::before { content: ''; width: 8px; height: 8px; border-radius: 50%; }
+.statusPill::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.inProgress {
+  color: var(--status-in-progress);
+}
+.inProgress::before {
+  background-color: var(--status-in-progress);
+}
+.complete, .approved {
+  color: var(--status-complete);
+}
+.complete::before, .approved::before {
+  background-color: var(--status-complete);
+}
+.pending {
+  color: var(--status-pending);
+}
+.pending::before {
+  background-color: var(--status-pending);
+}
+.rejected {
+  color: var(--status-rejected);
+}
+.rejected::before {
+  background-color: var(--status-rejected);
+}
 
-.inProgress { color: var(--status-in-progress); }
-.inProgress::before { background-color: var(--status-in-progress); }
+@media (max-width: 1024px) {
+  .orderTable th, .orderTable td {
+    padding: 14px 12px;
+  }
+  .avatar {
+    width: 28px;
+    height: 28px;
+  }
+  .headerButton {
+    font-size: 11px;
+  }
+  .statusPill {
+    font-size: 11px;
+  }
+  .orderTable input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+  .orderTable input[type="checkbox"]:checked::after {
+    font-size: 12px;
+  }
+}
 
-.complete { color: var(--status-complete); }
-.complete::before { background-color: var(--status-complete); }
+@media (max-width: 767px) {
+  .orderTable th, .orderTable td {
+    padding: 12px 8px; 
+  }
 
-.pending { color: var(--status-pending); }
-.pending::before { background-color: var(--status-pending); }
+  .avatar {
+    width: 24px;
+    height: 24px;
+  }
 
-.approved { color: var(--status-approved); }
-.approved::before { background-color: var(--status-approved); }
+  .userCell {
+    min-width: 150px; 
+    gap: 8px;
+  }
 
-.rejected { color: var(--status-rejected); }
-.rejected::before { background-color: var(--status-rejected); }
+  .dateCell {
+    min-width: 110px; 
+    gap: 6px;
+  }
+
+  .headerButton {
+    font-size: 10px;
+    gap: 4px;
+  }
+
+  .statusPill {
+    font-size: 10px;
+    gap: 6px;
+    min-width: auto; 
+  }
+
+  .statusPill::before {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .orderTable input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+  }
+
+  .orderTable input[type="checkbox"]:checked::after {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .orderTable th, .orderTable td {
+    padding: 10px 8px;
+  }
+  .userCell {
+    min-width: 160px;
+  }
+}

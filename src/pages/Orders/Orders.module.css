@@ -6,21 +6,30 @@
     flex-direction: column;
     gap: 20px;
 }
+
 .pageTitle {
     margin: 0;
     font-size: 20px;
     font-weight: 600;
     color: var(--text-primary);
 }
+
 .toolbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* gap: 16px; */
     padding: 12px;
     background-color: var(--toolbar-bg); 
     border-radius: 12px;
 }
-.toolbarActions { display: flex; align-items: center; gap: 8px; }
+
+.toolbarActions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
 
 .actionButton {
     background: none;
@@ -30,10 +39,12 @@
     padding: 8px;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
 }
 .actionButton:hover {
-    background-color: var(--sidebar-hover-bg);
     border-color: var(--accent-color);
     color: var(--text-primary);
 }
@@ -48,36 +59,37 @@
     color: var(--text-secondary);
     transition: border-color 0.2s ease;
 }
-
 .filterWrapper:hover {
     border-color: var(--accent-color);
 }
-
 .filterSelect {
-    background-color: transparent; 
+    background: transparent;
     border: none;
     color: var(--text-primary);
     font-size: 14px;
     font-weight: 500;
-    padding: 8px;
+    padding: 8px 4px;
     cursor: pointer;
     -webkit-appearance: none;
     appearance: none;
-    
 }
-
 .filterSelect:focus {
     outline: none;
 }
-
 .filterSelect option {
     background-color: var(--card-bg); 
     color: var(--text-primary); 
 }
 
-.searchBar { position: relative; }
+.searchBar {
+    position: relative; 
+    width: fit-content;
+    max-width: 300px;
+    margin-right: 40px;
+}
 .searchBar input {
-    background-color: var(--toolbar-bg);
+    width: 100%;
+    background-color: var(--background-color);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 10px 10px 10px 35px;
@@ -96,16 +108,29 @@
     color: var(--text-secondary);
 }
 
+
+/* --- Tablet Styles --- */
+@media (max-width: 1024px) {
+    .ordersContainer {
+        padding: 20px;
+    }
+    .pageTitle {
+        font-size: 18px;
+    }
+}
+
+
+/* --- Mobile Styles --- */
 @media (max-width: 767px) {
-  .toolbar {
-    flex-direction: column; 
-    align-items: stretch; 
-    gap: 12px;
-  }
-  .searchBar input {
-    width: 100%; 
-  }
-  .toolbarActions {
-      justify-content: space-between; 
-  }
+    .toolbar {
+        flex-direction: column; 
+        align-items: stretch; 
+        gap: 12px;
+    }
+    .toolbarActions {
+        justify-content: left;
+    }
+    .searchBar {
+        max-width: none;
+    }
 }
