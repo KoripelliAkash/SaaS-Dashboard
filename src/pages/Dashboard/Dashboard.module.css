@@ -103,11 +103,13 @@
   }
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .grd {
-    grid-template-columns: 1fr;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
-} */
+}
 
 @media (max-width: 500px) {
   .dashboardContainer {
@@ -116,6 +118,7 @@
   .grd {
     gap: 1rem;
     /* padding: 1rem; */
+    
   }
 }
 

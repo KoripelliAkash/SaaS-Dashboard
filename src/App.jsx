@@ -11,7 +11,7 @@ import useWindowSize from './hooks/useWindowSize';
 const App = () => {
 
   const { width } = useWindowSize();
-  const isTablet = width <= 1024;
+  const isTablet = width <= 1400;
   
   
 
@@ -55,7 +55,7 @@ const App = () => {
         toggleSidebar={toggleLeftSidebar}
         activePage={activePage} 
         setActivePage={setActivePage}
-        favorites={favorites} // Pass the list of favorites
+        favorites={favorites} 
       />
 
       <div className={styles.contentWrapper}>
@@ -63,8 +63,8 @@ const App = () => {
           activePage={activePage} 
           toggleRightSidebar={toggleRightSidebar}
           toggleLeftSidebar={toggleLeftSidebar}
-          favorites={favorites} // Pass the list
-          toggleFavorite={toggleFavorite} // Pass the function
+          favorites={favorites}
+          toggleFavorite={toggleFavorite} 
           openNotifications={() => setIsNotificationsOpen(true)}
         />
         <main className={styles.mainContent}>

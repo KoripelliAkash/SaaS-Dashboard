@@ -1,10 +1,13 @@
 .chartContainer {
   background-color: var(--card-bg);
   padding: 24px;
-  width: 90%;
   border-radius: 12px;
   border: 1px solid var(--border-color);
-  height: 90%;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease-in-out;
 }
 
 .chartTitle {
@@ -13,4 +16,28 @@
   font-size: 18px;
   font-weight: 600;
   color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .chartContainer {
+    padding: 20px;
+    height: fit-content;
+  }
+
+  .chartTitle {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 767px) {
+  .chartContainer {
+    padding: 16px;
+    height: fit-content;
+  }
+
+  .chartTitle {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
 }

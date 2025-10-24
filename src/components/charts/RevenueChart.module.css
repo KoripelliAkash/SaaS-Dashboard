@@ -4,6 +4,9 @@
   border-radius: 12px;
   border: 1px solid var(--border-color);
   height: 450px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease-in-out;
 }
 
 .header {
@@ -11,6 +14,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  flex-shrink: 0;
 }
 
 .chartTitle {
@@ -18,7 +22,6 @@
   font-size: 18px;
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 40px;
 }
 
 .legend {
@@ -49,3 +52,38 @@
   background-color: #9CA3AF;
 }
 
+@media (max-width: 1024px) {
+  .chartContainer {
+    height: fit-content;
+    padding: 20px;
+  }
+
+  .chartTitle {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 767px) {
+  .chartContainer {
+    height: fit-content;
+    padding: 16px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .chartTitle {
+    font-size: 16px;
+  }
+
+  .legend {
+    gap: 16px;
+  }
+
+  .legendItem {
+    font-size: 11px;
+  }
+}

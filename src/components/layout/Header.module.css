@@ -135,9 +135,10 @@
 @media (max-width: 767px) {
   .header {
     flex-wrap: wrap;
+    margin: 0;
     margin-bottom: 16px;
     gap: 12px;
-    padding: 10px;
+    /* padding: 10px; */
   }
 
   .breadcrumbs {
