@@ -98,9 +98,6 @@
   .topGrid {
     grid-template-columns: 1fr; 
   }
-  .projectionBox {
-    /* min-height: 300px; */
-  }
   .mainGrid {
     grid-template-columns: 1fr;
   }
