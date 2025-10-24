@@ -15,16 +15,17 @@ const RightSidebar = ({ isOpen, toggleSidebar }) => {
 
   return (
     <aside className={sidebarClasses}>
-      <div className={styles.header}>
-        <h4 className={styles.sectionTitle}>Notifications</h4>
-        <button className={styles.closeButton} onClick={toggleSidebar}>
-          <FiX />
-        </button>
-      </div>
+      
 
       <div className={styles.content}>
         {/* Notifications Section */}
         <section className={styles.section}>
+          <div className={styles.header}>
+            <h4 className={styles.sectionTitle}>Notifications</h4>
+        <button className={styles.closeButton} onClick={toggleSidebar}>
+          <FiX />
+        </button>
+          </div>
           <ul className={styles.notificationList}>
             <li className={styles.notificationItem}>
               <FiAlertCircle className={styles.icon} />
