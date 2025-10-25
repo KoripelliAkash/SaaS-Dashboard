@@ -4,14 +4,17 @@
   border-radius: var(--card-border-radius);
   box-shadow: var(--card-box-shadow);
   height: 450px;
+  display: flex; /* Added for better internal alignment */
+  flex-direction: column; /* Stack children vertically */
 }
 
 .title {
   margin-top: 0;
-  margin-bottom: 0px;
+  margin-bottom: 20px; /* Restored margin */
   font-size: 18px;
   font-weight: 600;
   color: var(--text-primary);
+  flex-shrink: 0; /* Prevent title from shrinking */
 }
 
 .mapContainer {
@@ -19,12 +22,12 @@
   margin-bottom: 20px;
   height: 200px;
   overflow: hidden;
+  flex-shrink: 0; /* Prevent map container from shrinking */
 }
-
 
 .mapImage {
   width: 100%;
-  height: auto;
+  height: 100%; /* Make image fill container height */
   object-fit: contain;
 }
 
@@ -35,6 +38,8 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  overflow-y: auto; /* Allow list to scroll if needed */
+  flex-grow: 1; /* Allow list to take remaining space */
 }
 
 .locationItem {
@@ -60,7 +65,7 @@
 .progressBar {
   width: 100%;
   height: 6px;
-  background-color: #F3F4F6; /* A light grey for the bar background */
+  background-color: var(--border-color); /* Use theme color */
   border-radius: 3px;
   overflow: hidden;
 }
@@ -69,4 +74,87 @@
   height: 100%;
   background-color: var(--accent-color);
   border-radius: 3px;
+}
+
+@media (max-width: 992px) {
+  .mapContainer {
+    margin-bottom: 16px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+  }
+  .mapImage {
+    height: 10%;
+  }
+}
+
+/* --- Tablet Styles --- */
+@media (max-width: 1024px) {
+  .container {
+    padding: 20px;
+    height: 400px; /* Slightly shorter */
+  }
+  .title {
+    font-size: 17px;
+    margin-bottom: 16px;
+  }
+  .mapContainer {
+    height: 180px;
+    margin-bottom: 16px;
+  }
+  .locationList {
+    gap: 14px;
+  }
+  .locationInfo {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  .progressBar {
+    height: 5px;
+  }
+}
+
+/* --- Mobile Styles --- */
+@media (max-width: 767px) {
+  .container {
+    padding: 16px;
+    height: 350px; /* Shorter for mobile */
+  }
+  .title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  .mapContainer {
+    height: 150px;
+    margin-bottom: 12px;
+  }
+  .locationList {
+    gap: 12px;
+  }
+  .locationInfo {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  .progressBar {
+    height: 4px;
+  }
+}
+
+@media (max-width: 767px) {
+.container {
+  width: 95%;
+  padding: 10px;
+}
+  
+}
+
+@media (max-width: 480px) {
+.container {
+  width: 95vw;
+  padding: 10px;
+}
+.locationList{
+  width: 90%;
+}
+  
 }

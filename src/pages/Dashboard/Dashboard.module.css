@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 24px;
   animation: fadeIn 0.5s ease-in-out;
+  padding: 0;
 }
 
 @keyframes fadeIn {
@@ -80,11 +81,6 @@
   align-items: start;
 }
 
-@media (max-width: 1200px) {
-  .topRow, .bottomRow {
-    grid-template-columns: 1fr; 
-  }
-}
 
 @media (max-width: 992px) {
   .row {
@@ -93,10 +89,12 @@
   .cardBox {
     min-height: auto;
   }
+  
 }
 @media (max-width: 1200px) {
-  .topGrid {
-    grid-template-columns: 1fr; 
+  .topGrid{
+    display: flex;
+    align-items: center;
   }
   .mainGrid {
     grid-template-columns: 1fr;
@@ -168,5 +166,11 @@
   }
   .topRow > *:nth-child(3) {
       grid-column: auto; 
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboardContainer {
+    width: 95vw;
   }
 }

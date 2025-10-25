@@ -32,8 +32,9 @@
 
 @media (max-width: 767px) {
   .chartContainer {
-    padding: 16px;
+    padding: 10px;
     height: fit-content;
+    
   }
 
   .chartTitle {

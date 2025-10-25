@@ -66,7 +66,7 @@
 @media (max-width: 767px) {
   .chartContainer {
     height: fit-content;
-    padding: 16px;
+    padding: 10px;
   }
 
   .header {
@@ -85,5 +85,11 @@
 
   .legendItem {
     font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chartContainer {
+    width: 95vw;
   }
 }

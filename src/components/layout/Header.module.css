@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
-  width: 100%;
+  width: 98%;
   gap: 16px; 
 }
 
@@ -59,7 +59,7 @@
   border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 10px 10px 10px 35px;
-  width: 250px;
+  width: 200px;
   color: var(--text-primary);
   transition: all 0.3s ease;
 }
@@ -134,18 +134,19 @@
 /* Mobile styles */
 @media (max-width: 767px) {
   .header {
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    margin: 0;
     margin-bottom: 16px;
-    gap: 12px;
-    /* padding: 10px; */
+    gap: 1px;
   }
 
   .breadcrumbs {
-    flex: 1;
+    /* flex-basis: 60%;
+    flex-grow: 1; */
     min-width: 0;
   }
-  
+
   .breadcrumbs .breadcrumbText,
   .breadcrumbs .breadcrumbSeparator {
     display: none;
@@ -159,18 +160,24 @@
     text-overflow: ellipsis;
   }
 
-  .searchBar input {
-    width: 150px;
-    padding: 8px 8px 8px 32px;
-    font-size: 13px;
+  .headerActions {
+    justify-content: flex-end;
+    flex-grow: 1;
+    gap: 0;
+    width: 200px;
   }
 
-  .headerActions {
-    order: -1;
-    width: 100%;
-    justify-content: flex-end;
+  .searchBar {
+    width: 150px;
+  }
+
+  .searchBar input {
+    padding: 8px 8px 8px 32px;
+    font-size: 13px;
+    width: 100px;
   }
 }
+
 
 /* Small mobile styles */
 @media (max-width: 480px) {
@@ -179,6 +186,10 @@
   }
 
   .searchBar {
+    width: 30px;
+  }
+  
+  .searchBar input{
     display: none;
   }
 
@@ -186,6 +197,8 @@
     gap: 4px;
     width: auto;
     order: 0;
+    gap: 0;
+    /* font-size: 12px; */
   }
 
   .actionButton {
@@ -194,6 +207,10 @@
   }
 
   .breadcrumbIcon {
-    font-size: 16px;
+    font-size: 14px;
+  }
+
+  .breadcrumbActive {
+    font-size: 11px;
   }
 }

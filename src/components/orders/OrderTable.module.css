@@ -31,11 +31,12 @@
   border-bottom: 1px solid var(--border-color);
   white-space: nowrap;
   min-width: 120px;
+  font-size: 15px;
 }
 .orderTable th {
   color: var(--text-secondary);
   font-weight: 500;
-  font-size: 12px;
+  font-size: 10px;
   text-transform: uppercase;
   background-color: var(--card-bg);
   position: sticky;
@@ -173,6 +174,7 @@
 @media (max-width: 1024px) {
   .orderTable th, .orderTable td {
     padding: 14px 12px;
+    font-size: 10px;
   }
   .avatar {
     width: 28px;
@@ -241,9 +243,17 @@
 
 @media (max-width: 480px) {
   .orderTable th, .orderTable td {
-    padding: 10px 8px;
+    padding: 10px 6px;
+    font-size: 10px;
+  }
+  .avatar {
+    width: 20px;
+    height: 2;
   }
   .userCell {
-    min-width: 160px;
+    width: 10px;
+  }
+  .dataCell {
+    width: 80px;
   }
 }

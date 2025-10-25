@@ -6,7 +6,6 @@ import { FiSearch, FiSun, FiMoon, FiBell, FiLayout, FiStar, FiClock, FiGrid } fr
 const Header = ({ activePage, toggleRightSidebar, toggleLeftSidebar, favorites, toggleFavorite, openNotifications }) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
-  // Check if the current page is in the favorites array
   const isFavorite = favorites.includes(activePage);
 
   return (
@@ -17,7 +16,6 @@ const Header = ({ activePage, toggleRightSidebar, toggleLeftSidebar, favorites, 
         </button>
 
         <button className={styles.breadcrumbButton} onClick={() => toggleFavorite(activePage)}>
-          {/* Conditionally apply the .favoriteActive class */}
           <FiStar className={`${styles.breadcrumbIcon} ${isFavorite ? styles.favoriteActive : ''}`} />
         </button>
 

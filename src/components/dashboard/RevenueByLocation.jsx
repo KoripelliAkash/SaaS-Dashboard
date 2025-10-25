@@ -33,8 +33,8 @@ const RevenueByLocation = () => {
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
-                  fill="#E5E7EB" // Land color
-                  stroke="#FFFFFF" // Border color between countries
+                  fill="#E5E7EB" 
+                  stroke="#FFFFFF"
                   strokeWidth={0.5}
                 />
               ))
