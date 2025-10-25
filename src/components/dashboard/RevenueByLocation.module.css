@@ -150,11 +150,9 @@
 
 @media (max-width: 480px) {
 .container {
-  width: 95vw;
+  width: 315px;
   padding: 10px;
-}
-.locationList{
-  width: 90%;
 }
   
 }
+

@@ -90,6 +90,7 @@
 
 @media (max-width: 480px) {
   .chartContainer {
-    width: 95vw;
+    font-size: 8px;
+    width: 315px;
   }
 }

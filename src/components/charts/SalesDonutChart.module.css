@@ -49,3 +49,10 @@
   height: 10px;
   border-radius: 50%;
 }
+
+@media (max-width: 480px) {
+  .chartContainer {
+    font-size: 8px;
+    width: 80vw;
+  }
+}
