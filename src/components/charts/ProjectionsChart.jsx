@@ -3,7 +3,6 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { ThemeContext } from '../../contexts/ThemeContext';
 import styles from './ProjectionsChart.module.css';
 
-// Placeholder data
 const data = [
   { name: 'Jan', Projections: 30, Actuals: 25 },
   { name: 'Feb', Projections: 40, Actuals: 38 },
