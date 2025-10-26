@@ -120,7 +120,7 @@
   color: #FBBF24;
 }
 
-/* Tablet styles */
+
 @media (max-width: 1024px) {
   .header {
     padding: 12px;
@@ -131,7 +131,7 @@
   }
 }
 
-/* Mobile styles */
+
 @media (max-width: 767px) {
   .header {
     display: flex;
@@ -179,7 +179,7 @@
 }
 
 
-/* Small mobile styles */
+
 @media (max-width: 480px) {
   .header {
     padding: 8px;
@@ -198,7 +198,7 @@
     width: auto;
     order: 0;
     gap: 0;
-    /* font-size: 12px; */
+    
   }
 
   .actionButton {

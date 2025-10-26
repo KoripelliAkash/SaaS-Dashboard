@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 82%;
 }
 
 .chartTitle {
@@ -33,7 +34,7 @@
 
 .legendItem {
   display: flex;
-  justify-content: space-between; /* Push name left, value right */
+  justify-content: space-between; 
   align-items: center;
   color: var(--text-secondary);
   font-size: 14px;
@@ -55,11 +56,11 @@
   font-weight: 600;
   color: var(--text-primary);
   text-align: right;
-  min-width: 70px; /* keeps alignment clean */
+  min-width: 70px; 
 }
 @media (max-width: 480px) {
   .chartContainer {
     font-size: 8px;
-    width: 80vw;
+    width: 78vw;
   }
 }

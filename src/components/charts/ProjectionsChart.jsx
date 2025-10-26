@@ -3,30 +3,30 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { ThemeContext } from '../../contexts/ThemeContext';
 import styles from './ProjectionsChart.module.css';
 
-// Original data
+
 const rawData = [
   { name: 'Jan', Projections: 30, Actuals: 25 },
   { name: 'Feb', Projections: 40, Actuals: 38 },
   { name: 'Mar', Projections: 50, Actuals: 42 },
-  { name: 'Apr', Projections: 45, Actuals: 48 }, // Actuals > Projections
+  { name: 'Apr', Projections: 45, Actuals: 48 }, 
   { name: 'May', Projections: 60, Actuals: 55 },
-  { name: 'Jun', Projections: 58, Actuals: 62 }, // Actuals > Projections
+  { name: 'Jun', Projections: 58, Actuals: 62 }, 
 ];
 
-// Process data for stacked bar
+
 const data = rawData.map(item => {
   if (item.Actuals >= item.Projections) {
     return {
       ...item,
-      baseValue: item.Projections, // Base is projection
-      difference: 0, // No positive difference
+      baseValue: item.Projections, 
+      difference: 0, 
       actualIsHigher: true,
     };
   } else {
     return {
       ...item,
-      baseValue: item.Actuals, // Base is actual
-      difference: item.Projections - item.Actuals, // Positive difference
+      baseValue: item.Actuals, 
+      difference: item.Projections - item.Actuals, 
       actualIsHigher: false,
     };
   }
@@ -36,11 +36,11 @@ const ProjectionsChart = () => {
   const { theme } = useContext(ThemeContext);
   const gridColor = theme === 'light' ? '#E5E7EB' : '#374151';
   const textColor = theme === 'light' ? '#6B7280' : '#9CA3AF';
-  const baseBarColor = '#90CAF9'; // Lighter blue
-  const differenceBarColor = '#6B7280'; // Darker gray
+  const baseBarColor = '#90CAF9'; 
+  const differenceBarColor = '#6B7280'; 
 
   const maxProjection = Math.max(...rawData.map(item => item.Projections));
-  const yAxisDomain = [0, Math.ceil(maxProjection / 10) * 10]; // Round up
+  const yAxisDomain = [0, Math.ceil(maxProjection / 10) * 10]; 
 
   return (
     <div className={styles.chartContainer}>

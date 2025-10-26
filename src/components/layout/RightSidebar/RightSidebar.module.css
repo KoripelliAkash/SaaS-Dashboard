@@ -79,7 +79,7 @@
   color: var(--text-primary);
   font-weight: 500;
   line-height: 1.4;
-  white-space: normal; /* Allow text to wrap */
+  white-space: normal; 
 }
 .notificationTime, .activityTime {
   font-size: 12px;
@@ -114,7 +114,7 @@
 }
 
 
-/* --- Tablet & Mobile Overlay Styles --- */
+
 @media (max-width: 1024px) {
   .rightSidebar {
     position: fixed;
@@ -132,12 +132,12 @@
   }
 
   .closeButton {
-    display: block; /* Show the close button */
+    display: block; 
   }
 }
 
 
-/* --- Mobile Only Adjustments --- */
+
 @media (max-width: 767px) {
   .rightSidebar {
     width: 260px;
@@ -146,10 +146,10 @@
 }
 
 
-/* --- Small Mobile Adjustments --- */
+
 @media (max-width: 480px) {
   .rightSidebar {
-    width: 260px; /* Take full width on small phones */
+    width: 260px; 
     border-left: none;
   }
 }

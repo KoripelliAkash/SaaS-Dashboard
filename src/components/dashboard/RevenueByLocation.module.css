@@ -3,9 +3,10 @@
   padding: 24px;
   border-radius: var(--card-border-radius);
   box-shadow: var(--card-box-shadow);
-  height: 450px; /* Default height */
+  height: 450px; 
   display: flex;
-  flex-direction: column; /* Stack children vertically */
+  flex-direction: column; 
+  width: 82%;
 }
 
 .title {
@@ -14,24 +15,24 @@
   font-size: 18px;
   font-weight: 600;
   color: var(--text-primary);
-  flex-shrink: 0; /* Prevent title from shrinking */
+  flex-shrink: 0; 
 }
 
 .mapContainer {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;   /* Center vertically (if image is smaller than container) */
+  justify-content: center; 
+  align-items: center;   
   width: 100%;
   margin-bottom: 20px;
-  height: 200px; /* Fixed height for the container */
+  height: 200px; 
   overflow: hidden;
   flex-shrink: 0;
 }
 
 .mapImage {
-  width: 100%; /* Image takes full width of its container */
-  height: 100%; /* Image takes full height of its container */
-  object-fit: contain; /* Ensures the entire image is visible within its container, scaled down if necessary, without cropping */
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain; 
 }
 
 .locationList {
@@ -41,8 +42,8 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  overflow-y: auto; /* Allow list to scroll if needed */
-  flex-grow: 1; /* Allow list to take remaining space */
+  overflow-y: auto; 
+  flex-grow: 1; 
 }
 
 .locationItem {
@@ -139,8 +140,9 @@
 
 @media (max-width: 480px) {
 .container {
-  width: 90vw;
-  padding: 5px;
+  width: 83vw;
+  padding-left: 20px;
+  padding-top: 20px;
 }
 .mapContainer{
   width: 80vw;

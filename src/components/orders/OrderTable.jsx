@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './OrderTable.module.css';
-// 1. Import statements are updated here
+
 import { FiArrowUp, FiArrowDown, FiCalendar } from 'react-icons/fi';
 import { FaArrowsAltV } from 'react-icons/fa';
 
@@ -30,7 +30,7 @@ const OrderTable = ({ orders, onSort, sortConfig }) => {
 
     const getSortIcon = (key) => {
         if (!sortConfig || sortConfig.key !== key) {
-            // 2. The new icon is used here for inactive columns
+            
             return <FaArrowsAltV className={styles.sortIconInactive} />;
         }
         return sortConfig.direction === 'ascending' ? <FiArrowUp /> : <FiArrowDown />;
@@ -72,7 +72,7 @@ const OrderTable = ({ orders, onSort, sortConfig }) => {
                         <th>Status</th>
                     </tr>
                 </thead>
-                {/* The table body is unchanged */}
+                {}
                 <tbody>
                     {orders.map((order) => (
                         <tr key={order.id} className={selectedRows.includes(order.id) ? styles.selected : ''}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './TopProducts.module.css';
 
-// Placeholder data
+
 const products = [
   { name: 'ASOS Ridley High Waist', price: 79.49, quantity: 82, amount: 6518.18 },
   { name: 'Marco Lightweight Shirt', price: 128.50, quantity: 37, amount: 4754.50 },

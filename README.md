@@ -2,7 +2,7 @@
 
 This is a feature-rich, fully responsive SaaS dashboard application built from scratch using React and Vite. The project showcases a modern, clean UI with both light and dark themes, interactive data visualizations, and a complete set of controls for data tables, including searching, filtering, and sorting.
 
-### ✨ **[Live Demo](https://saas-dashboard-pi-three.vercel.app/)** ✨
+### ✨ **[Live Demo](https:
 
 
 
@@ -48,7 +48,7 @@ To set up and run this project on your local machine, follow these steps:
 
 **1. Clone the Repository**
 ```bash
-git clone https://github.com/KoripelliAkash/SaaS-Dashboard.git
+git clone https:
 ```
 
 **2. Navigate to the Project Directory**
@@ -69,7 +69,7 @@ npm install --legacy-peer-deps
 npm run dev
 ```
 
-The application will be available at `http://localhost:5173`.
+The application will be available at `http:
 
 ---
 
@@ -83,7 +83,7 @@ This application is deployed on Vercel. The deployment process involves:
 
 Vercel automatically builds and deploys the `dist` directory. Continuous deployment is enabled for every push to the main branch.
 
-**Live Version:** [https://saas-dashboard-pi-three.vercel.app/]
+**Live Version:** [https:
 
 ---
 
@@ -133,15 +133,15 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/your-username/your-repository-name/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https:
 
 ---
 
 ## Author
 
 **Your Name**
-- GitHub: [@KoripelliAkash](https://github.com/KoripelliAkash)
-- LinkedIn: [Koripelli Akash](https://www.linkedin.com/in/akash-koripelli-9202b4262/)
+- GitHub: [@KoripelliAkash](https:
+- LinkedIn: [Koripelli Akash](https:
 
 ---
 

@@ -47,7 +47,7 @@ const SalesDonutChart = () => {
               cornerRadius={25}
               startAngle={220}
               endAngle={-140}
-              // dataKey="value"
+              
             >
               {data.map((entry, index) => (
                 <Cell

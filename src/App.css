@@ -1,4 +1,4 @@
-/* Global styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +13,7 @@ html {
   font-size: 16px;
 }
 
-/* Layout styles */
+
 .app {
   min-height: 100vh;
   transition: all 0.3s ease;
@@ -36,7 +36,7 @@ html {
   overflow-x: hidden;
 }
 
-/* Tablet styles */
+
 @media (max-width: 1024px) {
   html {
     font-size: 15px;
@@ -48,7 +48,7 @@ html {
   }
 }
 
-/* Mobile styles */
+
 @media (max-width: 768px) {
   html {
     font-size: 14px;
@@ -64,7 +64,7 @@ html {
   }
 }
 
-/* Small mobile styles */
+
 @media (max-width: 480px) {
   html {
     font-size: 13px;
@@ -75,7 +75,7 @@ html {
   }
 }
 
-/* Print styles */
+
 @media print {
   .app {
     display: block;
@@ -87,7 +87,7 @@ html {
   }
 }
 
-/* Touch device optimizations */
+
 @media (hover: none) and (pointer: coarse) {
   * {
     cursor: default !important;
@@ -98,7 +98,7 @@ html {
   }
 }
 
-/* High contrast and reduced motion preferences */
+
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;

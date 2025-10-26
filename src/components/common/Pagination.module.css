@@ -1,6 +1,6 @@
 .pagination {
   display: flex;
-  justify-content: flex-end; /* Align to the right */
+  justify-content: flex-end; 
   align-items: center;
   gap: 8px;
   margin-top: 16px;

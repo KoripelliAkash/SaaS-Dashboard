@@ -1,4 +1,4 @@
-/* Replace entire file content */
+
 .card {
   background-color: var(--card-bg);
   border-radius: var(--card-border-radius);
@@ -65,7 +65,7 @@
   font-size: 20px;
 }
 
-/* Tablet styles */
+
 @media (max-width: 1024px) {
   .card {
     padding: 20px;
@@ -90,7 +90,7 @@
   }
 }
 
-/* Mobile styles */
+
 @media (max-width: 767px) {
   .card {
     padding: 16px;
@@ -116,7 +116,7 @@
   }
 }
 
-/* Small mobile styles */
+
 @media (max-width: 480px) {
   .card {
     padding: 12px;

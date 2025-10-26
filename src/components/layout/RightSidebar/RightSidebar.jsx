@@ -18,7 +18,7 @@ const RightSidebar = ({ isOpen, toggleSidebar }) => {
       
 
       <div className={styles.content}>
-        {/* Notifications Section */}
+        {}
         <section className={styles.section}>
           <div className={styles.header}>
             <h4 className={styles.sectionTitle}>Notifications</h4>
@@ -58,10 +58,10 @@ const RightSidebar = ({ isOpen, toggleSidebar }) => {
           </ul>
         </section>
 
-        {/* Activities Section */}
+        {}
         <section className={styles.section}>
           <h4 className={styles.sectionTitle}>Activities</h4>
-          {/* --- Activity list is fully restored below --- */}
+          {}
           <ul className={styles.activityList}>
             <li className={styles.activityItem}>
               <div className={`${styles.activityIconWrapper} ${styles.bug}`}>
@@ -111,7 +111,7 @@ const RightSidebar = ({ isOpen, toggleSidebar }) => {
           </ul>
         </section>
 
-        {/* Contacts Section */}
+        {}
         <section className={styles.section}>
           <h4 className={styles.sectionTitle}>Contacts</h4>
           <ul className={styles.contactList}>

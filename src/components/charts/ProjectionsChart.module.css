@@ -1,10 +1,10 @@
 .chartContainer {
   background-color: var(--card-bg);
   padding: 24px;
-  border-radius: var(--card-border-radius); /* Using variable */
-  box-shadow: var(--card-box-shadow); /* Using variable */
-  border: 1px solid var(--border-color); /* Added border */
-  height: 350px; /* Default height */
+  border-radius: var(--card-border-radius); 
+  box-shadow: var(--card-box-shadow); 
+  border: 1px solid var(--border-color); 
+  height: 350px; 
   display: flex;
   flex-direction: column;
   transition: all 0.2s ease-in-out;
@@ -20,26 +20,3 @@
   flex-shrink: 0;
 }
 
-/* @media (max-width: 1024px) {
-  .chartContainer {
-    padding: 20px;
-    height: fit-content;
-  }
-
-  .chartTitle {
-    font-size: 17px;
-  }
-}
-
-@media (max-width: 767px) {
-  .chartContainer {
-    padding: 10px;
-    height: fit-content;
-    
-  }
-
-  .chartTitle {
-    font-size: 16px;
-    margin-bottom: 16px;
-  }
-} */
