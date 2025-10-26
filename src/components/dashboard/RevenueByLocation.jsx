@@ -2,10 +2,8 @@ import React from 'react';
 import styles from './RevenueByLocation.module.css';
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
 
-// Path to your downloaded TopoJSON file in the `public` folder
 const geoUrl = "/world-110m.json";
 
-// Placeholder data (remains the same)
 const locations = [
   { name: 'New York', value: 72, percentage: 72 },
   { name: 'San Francisco', value: 39, percentage: 39 },
@@ -17,7 +15,7 @@ const RevenueByLocation = () => {
   return (
     <div className={styles.container}>
       <h3 className={styles.title}>Revenue by Location</h3>
-      
+      <div className="mc">
       <div className={styles.mapContainer}>
         <ComposableMap
           projection="geoMercator"
@@ -41,6 +39,7 @@ const RevenueByLocation = () => {
             }
           </Geographies>
         </ComposableMap>
+      </div>
       </div>
 
       <ul className={styles.locationList}>

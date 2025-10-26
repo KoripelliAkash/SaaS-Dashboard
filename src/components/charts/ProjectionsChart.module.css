@@ -1,13 +1,14 @@
 .chartContainer {
   background-color: var(--card-bg);
   padding: 24px;
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
-  width: 100%;
-  height: fit-content;
+  border-radius: var(--card-border-radius); /* Using variable */
+  box-shadow: var(--card-box-shadow); /* Using variable */
+  border: 1px solid var(--border-color); /* Added border */
+  height: 350px; /* Default height */
   display: flex;
   flex-direction: column;
   transition: all 0.2s ease-in-out;
+  width: 100%;
 }
 
 .chartTitle {
@@ -19,7 +20,7 @@
   flex-shrink: 0;
 }
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .chartContainer {
     padding: 20px;
     height: fit-content;
@@ -41,4 +42,4 @@
     font-size: 16px;
     margin-bottom: 16px;
   }
-}
+} */

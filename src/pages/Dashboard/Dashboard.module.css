@@ -52,11 +52,12 @@
 }
 
 .cardBox {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* border: 1px solid rgba(255, 255, 255, 0.1); */
   border-radius: var(--card-border-radius); 
   box-shadow: var(--card-box-shadow);
   width: 100%;
   min-height: 350px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
 }
@@ -179,5 +180,8 @@
   .cardBox {
     /* padding: 10px; */
     width: fit-content;
+  }
+  .topGrid{
+    width: 95vw;
   }
 }

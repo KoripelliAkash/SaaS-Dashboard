@@ -54,7 +54,8 @@
 
 @media (max-width: 1024px) {
   .chartContainer {
-    height: fit-content;
+    margin-top: 5px;
+    height: 400px;
     padding: 20px;
   }
 
@@ -66,7 +67,8 @@
 @media (max-width: 767px) {
   .chartContainer {
     height: fit-content;
-    padding: 10px;
+    padding: 5px;
+    width: 91vw;
   }
 
   .header {
@@ -91,6 +93,6 @@
 @media (max-width: 480px) {
   .chartContainer {
     font-size: 8px;
-    width: 315px;
+    width: 90vw;
   }
 }

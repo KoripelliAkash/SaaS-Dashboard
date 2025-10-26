@@ -3,14 +3,14 @@
   padding: 24px;
   border-radius: var(--card-border-radius);
   box-shadow: var(--card-box-shadow);
-  height: 450px;
-  display: flex; /* Added for better internal alignment */
+  height: 450px; /* Default height */
+  display: flex;
   flex-direction: column; /* Stack children vertically */
 }
 
 .title {
   margin-top: 0;
-  margin-bottom: 20px; /* Restored margin */
+  margin-bottom: 20px;
   font-size: 18px;
   font-weight: 600;
   color: var(--text-primary);
@@ -18,17 +18,20 @@
 }
 
 .mapContainer {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;   /* Center vertically (if image is smaller than container) */
   width: 100%;
   margin-bottom: 20px;
-  height: 200px;
+  height: 200px; /* Fixed height for the container */
   overflow: hidden;
-  flex-shrink: 0; /* Prevent map container from shrinking */
+  flex-shrink: 0;
 }
 
 .mapImage {
-  width: 100%;
-  height: 100%; /* Make image fill container height */
-  object-fit: contain;
+  width: 100%; /* Image takes full width of its container */
+  height: 100%; /* Image takes full height of its container */
+  object-fit: contain; /* Ensures the entire image is visible within its container, scaled down if necessary, without cropping */
 }
 
 .locationList {
@@ -65,7 +68,7 @@
 .progressBar {
   width: 100%;
   height: 6px;
-  background-color: var(--border-color); /* Use theme color */
+  background-color: var(--border-color);
   border-radius: 3px;
   overflow: hidden;
 }
@@ -76,30 +79,17 @@
   border-radius: 3px;
 }
 
-@media (max-width: 992px) {
-  .mapContainer {
-    margin-bottom: 16px;
-    width: 350px;
-    display: flex;
-    justify-content: center;
-  }
-  .mapImage {
-    height: 10%;
-  }
-}
-
-/* --- Tablet Styles --- */
 @media (max-width: 1024px) {
   .container {
-    padding: 20px;
-    height: 400px; /* Slightly shorter */
+    padding: 24px;
+    height: 400px; 
   }
   .title {
     font-size: 17px;
     margin-bottom: 16px;
   }
   .mapContainer {
-    height: 180px;
+    height: fit-content;
     margin-bottom: 16px;
   }
   .locationList {
@@ -114,11 +104,10 @@
   }
 }
 
-/* --- Mobile Styles --- */
 @media (max-width: 767px) {
   .container {
     padding: 16px;
-    height: 350px; /* Shorter for mobile */
+    height: 350px; 
   }
   .title {
     font-size: 16px;
@@ -150,9 +139,11 @@
 
 @media (max-width: 480px) {
 .container {
-  width: 315px;
-  padding: 10px;
+  width: 90vw;
+  padding: 5px;
 }
-  
+.mapContainer{
+  width: 80vw;
+}
 }
 
